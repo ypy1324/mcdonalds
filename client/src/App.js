@@ -1,15 +1,19 @@
 import "./App.css";
-import A from "./Component/A";
-import B from "./Component/B";
-import { Routes, Route } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Header from "./common/Header";
+import Main from "./common/Main";
+import B from "./common/B";
+
+const router = createBrowserRouter([
+  { path: "/", element: <Main />, errorElement: <div>404</div> },
+  { path: "/b", element: <B /> },
+]);
 
 function App() {
   return (
     <>
-      <Routes>
-        <Route path="/A" element={<A />} />
-        <Route path="/B" element={<B />} />
-      </Routes>
+      <Header />
+      <RouterProvider router={router} />
     </>
   );
 }
