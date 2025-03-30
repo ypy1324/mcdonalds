@@ -33,3 +33,7 @@ body {
   --color-black: #000000;
   --color-white: #ffffff;
 }
+
+body {
+  background-color: var(--color-yellow);
+}

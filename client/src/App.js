@@ -1,6 +1,6 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Header from "./common/Header";
+import Header from "./common/header/Header";
 import Main from "./common/Main";
 import B from "./common/B";
 
