@@ -1,18 +1,30 @@
 import React from "react";
 import "./Header.css";
 import logo from "../../assets/images/logo.png";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 function Header() {
   return (
-    <div className="header-wrapper">
-      <img className="logo" src={logo} />
-      <div className="nav">
-        <div>Order Now</div>
-        <div>Promotions</div>
-        <div>Contact Us</div>
-      </div>
-      <div className="signin-btn">Sign In</div>
-    </div>
+    <Navbar expand="lg">
+      <Container>
+        <Navbar.Brand href="#home">
+          <img className="logo" src={logo} />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="m-auto">
+            <Nav.Link href="#home">Order Now</Nav.Link>
+            <Nav.Link href="#link">Promotions</Nav.Link>
+            <Nav.Link href="#link">Contact Us</Nav.Link>
+          </Nav>
+          <Nav>
+            <Nav.Link href="#link">Sign In</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
 

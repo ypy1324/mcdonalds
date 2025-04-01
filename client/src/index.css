@@ -2,7 +2,8 @@
 
 body {
   margin: 0;
-  font-family: "Outfit", sans-serif;
+  font-family: "Outfit", sans-serif !important;
+  background-color: var(--color-yellow) !important;
   /* -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; */
 }
@@ -32,8 +33,4 @@ body {
   --color-lightyellow: #ffd16c;
   --color-black: #000000;
   --color-white: #ffffff;
-}
-
-body {
-  background-color: var(--color-yellow);
 }

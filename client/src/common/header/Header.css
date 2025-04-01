@@ -1,23 +1,12 @@
-.header-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1rem 3rem 1rem 1rem;
-  color: var(--color-white);
-  font-size: var(--font-size-large);
-  font-weight: var(--font-weight-semibold);
-}
-
 .logo {
-  border-radius: 40%;
-  height: 10rem;
+  border-radius: 50%;
   width: 10rem;
 }
 
-.nav {
-  width: 30rem;
-  display: flex;
-  justify-content: space-between;
+.nav-link {
+  color: var(--color-white) !important;
+  font-size: var(--font-size-large) !important;
+  font-weight: var(--font-weight-semibold) !important;
 }
 
 .signin-btn {
