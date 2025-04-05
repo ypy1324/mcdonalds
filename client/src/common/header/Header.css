@@ -9,6 +9,11 @@
   font-weight: var(--font-weight-semibold) !important;
 }
 
+.nav-link:hover {
+  background-color: var(--color-red) !important;
+  border-radius: 20px;
+}
+
 .signin-btn {
   border: 3px solid var(--color-white);
   border-radius: 15%;
