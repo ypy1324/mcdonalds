@@ -7,11 +7,13 @@
   color: var(--color-white) !important;
   font-size: var(--font-size-large) !important;
   font-weight: var(--font-weight-semibold) !important;
+  padding: 20px !important;
+  transition: 0.3s !important;
 }
 
 .nav-link:hover {
   background-color: var(--color-red) !important;
-  border-radius: 20px;
+  border-radius: 50px;
 }
 
 .signin-btn {
