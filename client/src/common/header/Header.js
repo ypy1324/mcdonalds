@@ -16,12 +16,20 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto">
-            <Nav.Link as={Link}>Order Now</Nav.Link>
-            <Nav.Link href="#link">Promotions</Nav.Link>
-            <Nav.Link href="#link">Contact Us</Nav.Link>
+            <Nav.Link as={Link} to="/ordernow">
+              Order Now
+            </Nav.Link>
+            <Nav.Link as={Link} to="/promotions">
+              Promotions
+            </Nav.Link>
+            <Nav.Link as={Link} to="/contactus">
+              Contact Us
+            </Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href="#link">Sign In</Nav.Link>
+            <Nav.Link as={Link} to="/signin">
+              Sign In
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
