@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -15,7 +16,7 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto">
-            <Nav.Link href="#home">Order Now</Nav.Link>
+            <Nav.Link as={Link}>Order Now</Nav.Link>
             <Nav.Link href="#link">Promotions</Nav.Link>
             <Nav.Link href="#link">Contact Us</Nav.Link>
           </Nav>
