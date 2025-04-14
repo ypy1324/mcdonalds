@@ -3,8 +3,8 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import App from "./App.jsx";
 import Header from "./common/header/Header.jsx";
+import Main from "./pages/main/Main.jsx";
 import OrderNow from "./pages/orderNow/OrderNow.jsx";
 import Promotions from "./pages/promotions/Promotions.jsx";
 import ContactUs from "./pages/contactUs/ContactUs.jsx";
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
       </>
     ),
     children: [
-      { path: "/", element: <App /> },
+      { path: "/", element: <Main /> },
       {
         path: "/ordernow",
         element: <OrderNow />,
