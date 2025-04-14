@@ -1,18 +1,27 @@
 .logo {
   border-radius: 50%;
   width: 10rem;
+  transition: 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
 }
 
 .nav-link {
   color: var(--color-white) !important;
   font-size: var(--font-size-large) !important;
   font-weight: var(--font-weight-semibold) !important;
-  padding: 30px !important;
+  margin: 10px !important;
+  padding: 20px !important;
   transition: 0.3s !important;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+.nav-link:hover {
+  transform: scale(1.2);
+}
+
+.active {
   background-color: var(--color-red) !important;
   border-radius: 50px;
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 25%);

@@ -8,6 +8,7 @@ import Header from "./common/header/Header.jsx";
 import OrderNow from "./pages/orderNow/OrderNow.jsx";
 import Promotions from "./pages/promotions/Promotions.jsx";
 import ContactUs from "./pages/contactUs/ContactUs.jsx";
+import SignIn from "./pages/signIn/SignIn.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
       },
       { path: "/promotions", element: <Promotions /> },
       { path: "/contactus", element: <ContactUs /> },
+      { path: "/signin", element: <SignIn /> },
     ],
   },
 ]);
