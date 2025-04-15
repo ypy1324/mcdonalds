@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../common/button/Button";
+import Input from "../../common/input/Input";
 import "./SignIn.css";
 
 function SignIn() {
@@ -7,12 +8,9 @@ function SignIn() {
     <div className="sign-in-wrapper">
       <div className="sign-in-header">Sign In</div>
       <div className="sign-in-form">
-        <div className="input-field">
-          <input className="input" />
-          <div className="label">name</div>
-        </div>
-        <input />
-        <Button />
+        <Input input="Email" type="email" />
+        <Input input="Password" type="password" />
+        <Button button="Sign In" />
         <div className="register">
           <div>Don't have an account?</div>
           <div className="register-link">Register</div>

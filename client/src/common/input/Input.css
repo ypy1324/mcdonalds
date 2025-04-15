@@ -1,0 +1,35 @@
+.input-wrapper {
+  position: relative;
+  margin: 20px;
+  transition: 0.3s;
+}
+
+.input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: transparent;
+  outline: none;
+  z-index: 99999;
+}
+
+.input:focus ~ .label {
+  top: -25px;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+  transition: 0.3s;
+  pointer-events: none;
+  user-select: none;
+  font-weight: var(--font-weight-semibold);
+}
+
+.label-filled {
+  position: absolute;
+  top: -25px;
+  transition: 0.3s;
+  pointer-events: none;
+  user-select: none;
+  font-weight: var(--font-weight-semibold);
+}

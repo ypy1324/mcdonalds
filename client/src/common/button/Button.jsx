@@ -1,8 +1,8 @@
 import React from "react";
 import "./Button.css";
 
-function Button() {
-  return <button className="button">Sign In</button>;
+function Button(props) {
+  return <button className="button">{props.button}</button>;
 }
 
 export default Button;

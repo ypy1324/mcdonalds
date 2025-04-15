@@ -30,27 +30,3 @@
   margin-left: 1rem;
   cursor: pointer;
 }
-
-.input-field {
-  position: relative;
-  margin: 50px;
-  transition: 0.3s;
-}
-
-.input {
-  border: none;
-  border-bottom: 2px solid black;
-  background-color: transparent;
-  outline: none;
-  z-index: 99999;
-}
-
-.input:focus ~ .label {
-  bottom: 10px;
-  color: red;
-}
-
-.label {
-  position: absolute;
-  top: 0;
-}
