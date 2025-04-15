@@ -1,0 +1,56 @@
+.sign-in-wrapper {
+  justify-items: center;
+}
+
+.sign-in-header {
+  font-size: var(--font-size-xlarge);
+  font-weight: var(--font-weight-xbold);
+  margin-bottom: 3rem;
+}
+
+.sign-in-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid black;
+  border-radius: 40px;
+  height: 30rem;
+  width: 50%;
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 25%);
+  background-color: var(--color-lightyellow);
+}
+
+.register {
+  display: flex;
+}
+
+.register-link {
+  font-weight: var(--font-weight-xbold);
+  margin-left: 1rem;
+  cursor: pointer;
+}
+
+.input-field {
+  position: relative;
+  margin: 50px;
+  transition: 0.3s;
+}
+
+.input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: transparent;
+  outline: none;
+  z-index: 99999;
+}
+
+.input:focus ~ .label {
+  bottom: 10px;
+  color: red;
+}
+
+.label {
+  position: absolute;
+  top: 0;
+}

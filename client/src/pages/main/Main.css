@@ -1,14 +1,11 @@
 .main-wrapper {
   position: relative;
-  /* border: 10px solid black; */
-  /* height: 80vh; */
 }
 
 .main-burger {
   width: 100vw;
   max-width: 60rem;
   height: auto;
-  /* border: 5px solid blue; */
   display: block;
   margin: auto;
 }
@@ -18,7 +15,6 @@
   color: var(--color-red);
   font-weight: var(--font-weight-xbold);
   font-size: clamp(1rem, 12vw, 12rem);
-  /* border: 5px solid white; */
   bottom: 0;
   justify-self: anchor-center;
   white-space: nowrap;
