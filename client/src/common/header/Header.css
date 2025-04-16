@@ -1,6 +1,9 @@
 .logo {
   border-radius: 50%;
-  width: 10rem;
+  width: 20vw;
+  max-width: 10rem;
+  min-width: 7rem;
+  height: auto;
   transition: 0.3s;
 }
 

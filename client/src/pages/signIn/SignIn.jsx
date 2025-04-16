@@ -1,6 +1,7 @@
 import React from "react";
 import Button from "../../common/button/Button";
 import Input from "../../common/input/Input";
+import { Link } from "react-router-dom";
 import "./SignIn.css";
 
 function SignIn() {
@@ -13,7 +14,9 @@ function SignIn() {
         <Button button="Sign In" />
         <div className="register">
           <div>Don't have an account?</div>
-          <div className="register-link">Register</div>
+          <Link to="/register" className="register-link">
+            Register
+          </Link>
         </div>
       </div>
     </div>

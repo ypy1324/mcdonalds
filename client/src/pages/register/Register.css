@@ -1,36 +1,55 @@
-.sign-in-wrapper {
+.register-wrapper {
   justify-items: center;
 }
 
-.sign-in-header {
+.register-header {
   font-size: var(--font-size-xlarge);
   font-weight: var(--font-weight-xbold);
   margin-bottom: 3rem;
 }
 
-.sign-in-form {
+.register-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   border: 2px solid black;
   border-radius: 40px;
-  height: 30rem;
-  width: 50vw;
-  max-width: 35rem;
+  height: 35rem;
+  width: 60vw;
+  max-width: 40rem;
   min-width: 20rem;
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 25%);
   background-color: var(--color-lightyellow);
 }
 
-.register {
+.register-form-fields {
+  display: flex;
+}
+
+.sign-in {
   display: flex;
   margin-top: 2rem;
 }
 
-.register-link {
+.sign-in-link {
   font-weight: var(--font-weight-xbold);
   margin-left: 1rem;
   color: black;
   text-decoration: none;
+}
+
+.register-form-fields Input {
+  margin-top: 2rem;
+}
+
+@media screen and (max-width: 991px) {
+  .register-form-fields {
+    display: block;
+  }
+
+  .register-form {
+    height: 55rem;
+    margin-bottom: 2rem;
+  }
 }

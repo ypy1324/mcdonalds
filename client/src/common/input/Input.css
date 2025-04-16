@@ -13,12 +13,12 @@
 }
 
 .input:focus ~ .label {
-  top: -25px;
+  bottom: 30px;
 }
 
 .label {
   position: absolute;
-  top: 0;
+  bottom: 5px;
   transition: 0.3s;
   pointer-events: none;
   user-select: none;
@@ -27,7 +27,7 @@
 
 .label-filled {
   position: absolute;
-  top: -25px;
+  bottom: 30px;
   transition: 0.3s;
   pointer-events: none;
   user-select: none;
