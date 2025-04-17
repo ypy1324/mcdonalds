@@ -43,6 +43,16 @@
   margin-top: 2rem;
 }
 
+.register-success-wrapper {
+  text-align: center;
+  margin-top: 13rem;
+}
+
+.register-success-text {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-large);
+}
+
 @media screen and (max-width: 991px) {
   .register-form-fields {
     display: block;
@@ -51,5 +61,9 @@
   .register-form {
     height: 55rem;
     margin-bottom: 2rem;
+  }
+
+  .register-success-text {
+    font-size: var(--font-size-medium);
   }
 }

@@ -23,7 +23,9 @@ function Register() {
             <Input input="Postal Code" type="text" />
           </div>
         </div>
-        <Button button="Sign Up" />
+        <Link to="/register/success">
+          <Button button="Sign Up" />
+        </Link>
         <div className="sign-in">
           <div>Already have an account?</div>
           <Link to="/signin" className="sign-in-link">

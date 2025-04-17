@@ -10,6 +10,7 @@ import Promotions from "./pages/promotions/Promotions.jsx";
 import ContactUs from "./pages/contactUs/ContactUs.jsx";
 import SignIn from "./pages/signIn/SignIn.jsx";
 import Register from "./pages/register/Register.jsx";
+import RegisterSuccess from "./pages/register/RegisterSuccess.jsx";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       { path: "/contactus", element: <ContactUs /> },
       { path: "/signin", element: <SignIn /> },
       { path: "register", element: <Register /> },
+      { path: "/register/success", element: <RegisterSuccess /> },
     ],
   },
 ]);
