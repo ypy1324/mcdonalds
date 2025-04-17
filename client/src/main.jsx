@@ -11,6 +11,7 @@ import ContactUs from "./pages/contactUs/ContactUs.jsx";
 import SignIn from "./pages/signIn/SignIn.jsx";
 import Register from "./pages/register/Register.jsx";
 import RegisterSuccess from "./pages/register/RegisterSuccess.jsx";
+import Profile from "./pages/profile/Profile.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
       { path: "/signin", element: <SignIn /> },
       { path: "register", element: <Register /> },
       { path: "/register/success", element: <RegisterSuccess /> },
+      { path: "/profile", element: <Profile /> },
     ],
   },
 ]);
