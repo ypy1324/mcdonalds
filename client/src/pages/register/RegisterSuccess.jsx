@@ -1,14 +1,20 @@
 import React from "react";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import Button from "../../common/button/Button";
+import { Link } from "react-router-dom";
+import "./Register.css";
 
 function RegisterSuccess() {
   return (
     <div className="register-success-wrapper">
-      <div className="register-success-text">Congratulations!</div>
+      <IoIosCheckmarkCircleOutline size="5rem" />
       <div className="register-success-text">
-        Your account has been successfully created!
+        <div>Congratulations!</div>
+        <div>Your account has been successfully created!</div>
       </div>
-      <Button button="Sign In" />
+      <Link to="/signin">
+        <Button button="Sign In" />
+      </Link>
     </div>
   );
 }
