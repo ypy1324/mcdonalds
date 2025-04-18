@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "../../common/button/Button";
+import { Link } from "react-router-dom";
 import "./Profile.css";
 
 function Profile() {
@@ -26,7 +27,9 @@ function Profile() {
           <div className="profile-key">Address</div>
           <div className="profile-value">25 Holly St, Toronto, ON, M4S 0E3</div>
         </div>
-        <Button button="Change Address" />
+        <Link to="/profile/address">
+          <Button button="Change Address" />
+        </Link>
       </div>
     </div>
   );

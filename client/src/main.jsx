@@ -10,8 +10,9 @@ import Promotions from "./pages/promotions/Promotions.jsx";
 import ContactUs from "./pages/contactUs/ContactUs.jsx";
 import SignIn from "./pages/signIn/SignIn.jsx";
 import Register from "./pages/register/Register.jsx";
-import RegisterSuccess from "./pages/register/RegisterSuccess.jsx";
 import Profile from "./pages/profile/Profile.jsx";
+import Address from "./pages/profile/Address.jsx";
+import Success from "./common/success/Success.jsx";
 
 const router = createBrowserRouter([
   {
@@ -31,8 +32,23 @@ const router = createBrowserRouter([
       { path: "/contactus", element: <ContactUs /> },
       { path: "/signin", element: <SignIn /> },
       { path: "register", element: <Register /> },
-      { path: "/register/success", element: <RegisterSuccess /> },
+      {
+        path: "/register/success",
+        element: (
+          <Success
+            message1="Congratulations!"
+            message2="Your account has been successfully created!"
+          />
+        ),
+      },
       { path: "/profile", element: <Profile /> },
+      { path: "/profile/address", element: <Address /> },
+      {
+        path: "/profile/address/success",
+        element: (
+          <Success message1="Your address had been successfully changed!" />
+        ),
+      },
     ],
   },
 ]);

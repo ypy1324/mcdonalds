@@ -1,0 +1,10 @@
+.success-wrapper {
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.success-text {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-large);
+  margin: 2rem;
+}
