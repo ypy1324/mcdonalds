@@ -21,21 +21,21 @@ function Header() {
             <Nav.Link
               as={Link}
               to="/ordernow"
-              className={location === "/ordernow" ? "active" : ""}
+              className={location === "/ordernow" ? "active-nav" : ""}
             >
               Order Now
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="/promotions"
-              className={location === "/promotions" ? "active" : ""}
+              className={location === "/promotions" ? "active-nav" : ""}
             >
               Promotions
             </Nav.Link>
             <Nav.Link
               as={Link}
               to="/contactus"
-              className={location === "/contactus" ? "active" : ""}
+              className={location === "/contactus" ? "active-nav" : ""}
             >
               Contact Us
             </Nav.Link>
@@ -44,7 +44,7 @@ function Header() {
             <Nav.Link
               as={Link}
               to="/signin"
-              className={location === "/signin" ? "active" : ""}
+              className={location === "/signin" ? "active-nav" : ""}
             >
               Sign In
             </Nav.Link>

@@ -24,7 +24,7 @@
   transform: scale(1.2);
 }
 
-.active {
+.active-nav {
   background-color: var(--color-red) !important;
   border-radius: 50px;
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 25%);

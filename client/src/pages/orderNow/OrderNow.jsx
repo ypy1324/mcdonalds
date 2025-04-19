@@ -1,7 +1,13 @@
 import React from "react";
+import "./OrderNow.css";
+import Category from "./Category";
 
 function OrderNow() {
-  return <div>OrderNow</div>;
+  return (
+    <div>
+      <Category />
+    </div>
+  );
 }
 
 export default OrderNow;
