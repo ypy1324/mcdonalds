@@ -15,7 +15,7 @@ function MenuCanvas() {
       </Button>
       <Offcanvas className="off-canvas" show={showMenu} onHide={handleClose}>
         <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Menu</Offcanvas.Title>
+          <Offcanvas.Title className="canvas-title">Menu</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
           <div className="category">All</div>
