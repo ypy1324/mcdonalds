@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import MenuCanvas from "./MenuCanvas";
 import "./OrderNow.css";
 
@@ -24,9 +24,15 @@ function Category() {
       <div className="large-screen">
         {categories.map((category, i) => {
           return (
-            <Link key={i} className="category" to={`/ordernow/${category}`}>
+            <NavLink
+              key={i}
+              to={`/ordernow/${category}`}
+              className={({ isActive }) =>
+                isActive ? "category active-category" : "category"
+              }
+            >
               {category}
-            </Link>
+            </NavLink>
           );
         })}
       </div>
