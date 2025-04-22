@@ -1,13 +1,13 @@
 import React from "react";
-import "./Header.css";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import "./Header.css";
 
 function Header() {
-  const location = useLocation().pathname;
+  const navLink = ["Order Now", "Promotions", "Contact Us"];
 
   return (
     <Navbar expand="lg">
@@ -18,36 +18,30 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto">
-            <Nav.Link
-              as={Link}
-              to="/ordernow"
-              className={location === "/ordernow" ? "active-nav" : ""}
-            >
-              Order Now
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/promotions"
-              className={location === "/promotions" ? "active-nav" : ""}
-            >
-              Promotions
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="/contactus"
-              className={location === "/contactus" ? "active-nav" : ""}
-            >
-              Contact Us
-            </Nav.Link>
+            {navLink.map((link, i) => {
+              const linkLower = link.toLowerCase().replace(" ", "");
+              return (
+                <NavLink
+                  key={i}
+                  to={"/" + linkLower}
+                  className={({ isActive }) =>
+                    isActive ? "nav-link active-nav" : "nav-link"
+                  }
+                >
+                  {link}
+                </NavLink>
+              );
+            })}
           </Nav>
           <Nav>
-            <Nav.Link
-              as={Link}
+            <NavLink
               to="/signin"
-              className={location === "/signin" ? "active-nav" : ""}
+              className={({ isActive }) =>
+                isActive ? "nav-link active-nav" : "nav-link"
+              }
             >
               Sign In
-            </Nav.Link>
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>

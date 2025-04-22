@@ -1,10 +1,20 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import MenuCanvas from "./MenuCanvas";
 import "./OrderNow.css";
 
 function Category() {
-  const location = useLocation().pathname;
+  const categories = [
+    "All",
+    "Breakfast",
+    "Beef",
+    "Chicken",
+    "Wraps",
+    "Snacks & Sides",
+    "Desserts",
+    "Beverages",
+    "Happy Meal",
+  ];
 
   return (
     <div className="category-wrapper">
@@ -12,15 +22,13 @@ function Category() {
         <MenuCanvas />
       </div>
       <div className="large-screen">
-        <Link className="category">All</Link>
-        <Link className="category">Breakfast</Link>
-        <Link className="category">Beef</Link>
-        <Link className="category">Chicken</Link>
-        <Link className="category">Wraps</Link>
-        <Link className="category">Snacks & Sides</Link>
-        <Link className="category">Desserts</Link>
-        <Link className="category">Beverages</Link>
-        <Link className="category">Happy Meal</Link>
+        {categories.map((category, i) => {
+          return (
+            <Link key={i} className="category" to={`/ordernow/${category}`}>
+              {category}
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

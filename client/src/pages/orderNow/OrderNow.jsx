@@ -1,11 +1,13 @@
 import React from "react";
-import "./OrderNow.css";
 import Category from "./Category";
+import { Outlet } from "react-router-dom";
+import "./OrderNow.css";
 
 function OrderNow() {
   return (
     <div>
       <Category />
+      <Outlet />
     </div>
   );
 }
