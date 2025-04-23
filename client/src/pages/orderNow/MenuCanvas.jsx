@@ -1,9 +1,22 @@
 import React, { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Button from "react-bootstrap/Button";
+import { NavLink } from "react-router-dom";
+import "./OrderNow.css";
 
 function MenuCanvas() {
   const [showMenu, setShowMenu] = useState(false);
+  const categories = [
+    "All",
+    "Breakfast",
+    "Beef",
+    "Chicken",
+    "Wraps",
+    "Snacks & Sides",
+    "Desserts",
+    "Beverages",
+    "Happy Meal",
+  ];
 
   const handleClose = () => setShowMenu(false);
   const handleShow = () => setShowMenu(true);
@@ -18,15 +31,20 @@ function MenuCanvas() {
           <Offcanvas.Title className="canvas-title">Menu</Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          <div className="category">All</div>
-          <div className="category">Breakfast</div>
-          <div className="category">Beef</div>
-          <div className="category">Chicken</div>
-          <div className="category">Wraps</div>
-          <div className="category">Snacks & Sides</div>
-          <div className="category">Desserts</div>
-          <div className="category">Beverages</div>
-          <div className="category">Happy Meal</div>
+          {categories.map((category, i) => {
+            return (
+              <NavLink
+                key={i}
+                to={`/ordernow/${category}`}
+                onClick={handleClose}
+                className={({ isActive }) =>
+                  isActive ? "category active-category" : "category"
+                }
+              >
+                {category}
+              </NavLink>
+            );
+          })}
         </Offcanvas.Body>
       </Offcanvas>
     </div>
