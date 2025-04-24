@@ -1,5 +1,14 @@
+.ordernow-wrapper {
+  display: flex;
+}
+
 .category-wrapper {
   margin-top: 3rem;
+}
+
+.menu-wrapper {
+  width: 100%;
+  text-align: center;
 }
 
 .large-screen {

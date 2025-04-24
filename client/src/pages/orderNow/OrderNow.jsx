@@ -5,7 +5,7 @@ import "./OrderNow.css";
 
 function OrderNow() {
   return (
-    <div>
+    <div className="ordernow-wrapper">
       <Category />
       <Outlet />
     </div>

@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 function Menu() {
   const params = useParams();
 
-  return <div>{params.category}</div>;
+  return <div className="menu-wrapper">{params.category}</div>;
 }
 
 export default Menu;
