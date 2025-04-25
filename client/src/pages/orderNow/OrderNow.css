@@ -24,7 +24,7 @@
 .category {
   display: flex;
   font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-small);
   padding: 1rem;
   margin: 0.5rem;
   border-radius: 30px;
@@ -51,48 +51,51 @@
 }
 
 .canvas-title {
-  font-size: var(--font-size-xlarge);
+  font-size: var(--font-size-large);
   font-weight: var(--font-weight-bold);
 }
 
 .menu-wrapper {
-  width: 100%;
   text-align: center;
 }
 
 .menu-header {
-  font-size: var(--font-size-xlarge);
+  font-size: var(--font-size-large);
   font-weight: var(--font-weight-xbold);
   margin-bottom: 2rem;
 }
 
 .menu-item {
   display: inline-block;
-  width: 300px;
+  width: 20vw;
+  min-width: 15rem;
   margin: 3rem;
 }
 
 .item-image {
-  width: 200px;
+  width: 15rem;
 }
 
 .item-name {
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
   font-weight: var(--font-weight-bold);
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .item-price {
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-small);
   font-weight: var(--font-weight-medium);
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .item-rating {
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-medium);
+  margin: 0.5rem 0 0.5rem 0;
 }
 
 .item-select {
-  font-size: var(--font-size-medium);
+  font-size: var(--font-size-small);
   font-weight: var(--font-weight-semibold);
   color: var(--color-red);
   border: 2px solid var(--color-red);

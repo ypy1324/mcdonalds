@@ -3,7 +3,7 @@
 }
 
 .profile-header {
-  font-size: var(--font-size-xlarge);
+  font-size: var(--font-size-large);
   font-weight: var(--font-weight-xbold);
   margin-bottom: 3rem;
 }
@@ -29,7 +29,7 @@
 
 .profile-key {
   font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
 }
 
 .profile-value {

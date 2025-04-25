@@ -5,6 +5,6 @@
 
 .success-text {
   font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
   margin: 2rem;
 }

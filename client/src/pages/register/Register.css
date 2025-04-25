@@ -3,7 +3,7 @@
 }
 
 .register-header {
-  font-size: var(--font-size-xlarge);
+  font-size: var(--font-size-large);
   font-weight: var(--font-weight-xbold);
   margin-bottom: 3rem;
 }
@@ -55,6 +55,6 @@
   }
 
   .register-success-text {
-    font-size: var(--font-size-medium);
+    font-size: var(--font-size-small);
   }
 }

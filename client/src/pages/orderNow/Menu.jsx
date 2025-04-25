@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import mainBurger from "../../assets/images/mainBurger.png";
+import { AiOutlineStar } from "react-icons/ai";
 
 function Menu() {
   const params = useParams();
@@ -12,6 +13,12 @@ function Menu() {
     { name: "Filet-O-Fish", price: 12.99, rating: 3.9, ratingCount: 72 },
     {
       name: "Chicken Breakfast Wrap",
+      price: 0.99,
+      rating: 1.9,
+      ratingCount: 401,
+    },
+    {
+      name: "McChicken",
       price: 0.99,
       rating: 1.9,
       ratingCount: 401,
@@ -28,6 +35,7 @@ function Menu() {
             <div className="item-name">{item.name}</div>
             <div className="item-price">${item.price}</div>
             <div className="item-rating">
+              <AiOutlineStar />
               {item.rating} ({item.ratingCount})
             </div>
             <div className="item-select">Select</div>

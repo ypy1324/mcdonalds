@@ -13,7 +13,7 @@
 
 .nav-link {
   color: var(--color-white) !important;
-  font-size: var(--font-size-large);
+  font-size: var(--font-size-medium);
   font-weight: var(--font-weight-semibold);
   margin: 10px;
   padding: 20px !important;
