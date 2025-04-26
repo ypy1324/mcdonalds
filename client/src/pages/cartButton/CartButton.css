@@ -1,0 +1,9 @@
+.cart-button {
+  border: 5px solid var(--color-red);
+  width: fit-content;
+  padding: 1rem;
+  font-size: 3rem;
+}
+
+.cart-icon {
+}
