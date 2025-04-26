@@ -68,8 +68,9 @@
 .menu-item {
   display: inline-block;
   width: 20vw;
-  min-width: 15rem;
+  min-width: fit-content;
   margin: 3rem;
+  cursor: pointer;
 }
 
 .item-image {
@@ -98,6 +99,7 @@
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-semibold);
   color: var(--color-red);
+  background-color: var(--color-yellow);
   border: 2px solid var(--color-red);
   border-radius: 30px;
   width: 100px;

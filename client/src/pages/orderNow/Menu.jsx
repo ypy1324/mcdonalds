@@ -38,7 +38,7 @@ function Menu() {
               <AiOutlineStar />
               {item.rating} ({item.ratingCount})
             </div>
-            <div className="item-select">Select</div>
+            <button className="item-select">Select</button>
           </div>
         );
       })}
