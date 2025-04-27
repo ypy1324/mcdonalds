@@ -1,8 +1,14 @@
 .cart-button {
   border: 5px solid var(--color-red);
+  border-radius: 50%;
+  background-color: var(--color-red);
   width: fit-content;
+  height: auto;
   padding: 1rem;
-  font-size: 3rem;
+  font-size: 2rem;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
 }
 
 .cart-icon {
