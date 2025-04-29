@@ -1,15 +1,12 @@
 .cart-button {
-  border: 5px solid var(--color-red);
+  border: 3px solid var(--color-black);
   border-radius: 50%;
   background-color: var(--color-red);
-  width: fit-content;
-  height: auto;
+  box-shadow: 5px 5px 2px 0px rgba(0, 0, 0, 25%);
+  line-height: 1rem;
   padding: 1rem;
-  font-size: 3rem;
+  font-size: 2.5rem;
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-}
-
-.cart-icon {
 }
