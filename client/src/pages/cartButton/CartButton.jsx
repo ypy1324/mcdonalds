@@ -7,7 +7,7 @@ import "./CartButton.css";
 function CartButton() {
   return (
     <div className="cart-button">
-      <FontAwesomeIcon icon={faBasketShopping} />
+      {/* <FontAwesomeIcon icon={faBasketShopping} /> */}btn
     </div>
   );
 }
