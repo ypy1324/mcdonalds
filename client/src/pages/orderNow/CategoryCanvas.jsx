@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
 import "./OrderNow.css";
 
-function MenuCanvas() {
+function CategoryCanvas() {
   const [showMenu, setShowMenu] = useState(false);
   const categories = [
     "All",
@@ -51,4 +51,4 @@ function MenuCanvas() {
   );
 }
 
-export default MenuCanvas;
+export default CategoryCanvas;

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import MenuCanvas from "./MenuCanvas";
+import CategoryCanvas from "./CategoryCanvas";
 import "./OrderNow.css";
 
 function Category() {
@@ -19,7 +19,7 @@ function Category() {
   return (
     <div className="category-wrapper">
       <div className="small-screen">
-        <MenuCanvas />
+        <CategoryCanvas />
       </div>
       <div className="large-screen">
         {categories.map((category, i) => {
