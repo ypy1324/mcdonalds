@@ -1,12 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { RiShoppingBasketLine } from "react-icons/ri";
 import "./CartButton.css";
 
 function CartButton() {
   return (
-    <div className="cart-button">
+    <Link to="/mycart" className="cart-button">
       <RiShoppingBasketLine />
-    </div>
+    </Link>
   );
 }
 

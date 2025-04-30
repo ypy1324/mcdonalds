@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App.jsx";
-import Main from "./pages/main/Main.jsx";
+import Home from "./pages/home/Home.jsx";
 import OrderNow from "./pages/orderNow/OrderNow.jsx";
 import Menu from "./pages/orderNow/Menu.jsx";
 import Promotions from "./pages/promotions/Promotions.jsx";
@@ -14,12 +14,13 @@ import Register from "./pages/register/Register.jsx";
 import Profile from "./pages/profile/Profile.jsx";
 import Address from "./pages/profile/Address.jsx";
 import Success from "./common/success/Success.jsx";
+import MyCart from "./pages/myCart/MyCart.jsx";
 
 const router = createBrowserRouter([
   {
     element: <App />,
     children: [
-      { path: "/", element: <Main /> },
+      { path: "/", element: <Home /> },
       {
         path: "/ordernow",
         element: <OrderNow />,
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
           <Success message1="Your address had been successfully changed!" />
         ),
       },
+      { path: "/mycart", element: <MyCart /> },
     ],
   },
 ]);

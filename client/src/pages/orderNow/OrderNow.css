@@ -107,6 +107,10 @@
 }
 
 @media screen and (max-width: 991px) {
+  .ordernow-wrapper {
+    display: block;
+  }
+
   .large-screen {
     display: none;
   }

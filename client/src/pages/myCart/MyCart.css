@@ -1,0 +1,118 @@
+.mycart-wrapper {
+  justify-items: center;
+}
+
+.mycart-header {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-xbold);
+  margin-bottom: 3rem;
+}
+
+.mycart-content {
+  display: flex;
+  justify-content: space-between;
+  width: 70vw;
+}
+
+.items-list {
+}
+
+.items-list-header {
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: 3rem;
+}
+
+.items-list-item {
+  display: flex;
+  align-items: center;
+}
+
+.item-img {
+  width: 10rem;
+}
+
+.item-header {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  margin: 0.5rem;
+}
+
+.item-quantity {
+  display: flex;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  align-items: center;
+  margin: 0.5rem;
+}
+
+.quantity-symbol {
+  font-size: var(--font-size-large);
+}
+
+.quantity {
+  margin: 0 1rem 0 1rem;
+}
+
+.item-remove-btn {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  border: 3px solid var(--color-red);
+  border-radius: 30px;
+  background-color: var(--color-yellow);
+  color: var(--color-red);
+  margin: 0.5rem;
+}
+
+.item-total {
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  margin: 0.5rem;
+}
+
+.items-checkout {
+  border: 5px solid var(--color-black);
+  border-radius: 30px;
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 25%);
+  background-color: var(--color-lightyellow);
+  padding: 2rem;
+  width: 30vw;
+  min-width: fit-content;
+  max-width: 25rem;
+}
+
+.checkout-items-count {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: 3rem;
+}
+
+.checkout-price {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-small);
+  font-weight: var(--font-weight-medium);
+  margin-top: 1rem;
+}
+
+.checkout-total {
+  font-weight: var(--font-weight-xbold);
+  margin-top: 4rem;
+}
+
+.checkout-btn-wrapper {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.checkout-btn {
+  border: 3px solid var(--color-black);
+  border-radius: 50px;
+  padding: 0.5rem;
+  background-color: var(--color-red);
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-semibold);
+  width: 10vw;
+  min-width: fit-content;
+  max-width: 10rem;
+}
