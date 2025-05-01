@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./MyCart.css";
 
 function ItemsCheckout() {
@@ -18,7 +19,9 @@ function ItemsCheckout() {
         <div>$98.51</div>
       </div>
       <div className="checkout-btn-wrapper">
-        <button className="checkout-btn">Checkout</button>
+        <Link to="/checkout">
+          <button className="checkout-btn">Checkout</button>
+        </Link>
       </div>
     </div>
   );
