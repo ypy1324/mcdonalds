@@ -7,13 +7,16 @@ import OrderSummary from "./OrderSummary";
 
 function Checkout() {
   return (
-    <div className="checkout-wrapper">
-      <div>
-        <OrderType />
-        <PaymentDetails />
-        <UseRewardsPoints />
+    <div>
+      <div className="checkout-header">Checkout</div>
+      <div className="checkout-content">
+        <div>
+          <OrderType />
+          <PaymentDetails />
+          <UseRewardsPoints />
+        </div>
+        <OrderSummary />
       </div>
-      <OrderSummary />
     </div>
   );
 }
