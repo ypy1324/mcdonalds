@@ -1,3 +1,4 @@
+/* Profile.jsx */
 .profile-wrapper {
   justify-items: center;
 }
@@ -43,6 +44,7 @@
   justify-self: center;
 }
 
+/* Address.jsx */
 .address-form {
   display: flex;
   flex-direction: column;

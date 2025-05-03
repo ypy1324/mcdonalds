@@ -1,7 +1,9 @@
+/* OrderNow.jsx */
 .ordernow-wrapper {
   display: flex;
 }
 
+/* Category.jsx */
 .category-wrapper {
   margin-top: 3rem;
 }
@@ -46,6 +48,7 @@
   cursor: pointer;
 }
 
+/* CategoryCanvas.jsx */
 .off-canvas {
   background-color: var(--color-lightyellow);
 }
@@ -55,6 +58,7 @@
   font-weight: var(--font-weight-bold);
 }
 
+/* Menu.jsx */
 .menu-wrapper {
   text-align: center;
 }

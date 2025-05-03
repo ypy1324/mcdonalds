@@ -1,3 +1,4 @@
+/* MyCart.jsx */
 .mycart-wrapper {
   justify-items: center;
 }
@@ -16,6 +17,7 @@
   max-width: 70rem;
 }
 
+/* ItemsList.jsx */
 .items-list-header {
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-bold);
@@ -78,6 +80,7 @@
   margin: 0.5rem;
 }
 
+/* ItemsCheckout.jsx */
 .items-checkout-wrapper {
   border: 5px solid var(--color-black);
   border-radius: 30px;
