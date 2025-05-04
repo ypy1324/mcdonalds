@@ -112,3 +112,14 @@
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-bold);
 }
+
+/* PaymentDetails.jsx */
+.payment-details-wrapper {
+  display: flex;
+  margin-top: 4rem;
+}
+
+.payment-details-header {
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-semibold);
+}
