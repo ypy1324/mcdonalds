@@ -117,9 +117,15 @@
 .payment-details-wrapper {
   display: flex;
   margin-top: 4rem;
+  /* justify-content: space-between;
+  width: 30vw; */
 }
 
 .payment-details-header {
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-semibold);
+}
+
+.payment-details-wrapper Input {
+  margin-top: 2rem;
 }
