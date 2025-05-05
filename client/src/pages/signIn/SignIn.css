@@ -24,6 +24,10 @@
   background-color: var(--color-lightyellow);
 }
 
+.sign-in-form Input {
+  margin-top: 3rem;
+}
+
 .register {
   display: flex;
   margin-top: 2rem;
