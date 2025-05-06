@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import OrderType from "./OrderType";
 import PaymentDetails from "./PaymentDetails";
 import UseRewardsPoints from "./UseRewardsPoints";
@@ -15,9 +14,6 @@ function Checkout() {
           <OrderType />
           <PaymentDetails />
           <UseRewardsPoints />
-          <Link to="/checkout">
-            <button className="place-order-btn">Place Order</button>
-          </Link>
         </div>
         <OrderSummary />
       </div>

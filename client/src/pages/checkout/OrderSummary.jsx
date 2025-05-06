@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function OrderSummary() {
   return (
@@ -28,6 +29,11 @@ function OrderSummary() {
       <div className="summary-price summary-total">
         <div>Total</div>
         <div>$98.51</div>
+      </div>
+      <div className="place-order-wrapper">
+        <Link to="/checkout">
+          <button className="place-order-btn">Place Order</button>
+        </Link>
       </div>
     </div>
   );

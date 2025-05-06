@@ -4,17 +4,17 @@ import { FaHamburger } from "react-icons/fa";
 
 function OrderType() {
   return (
-    <div className="order-type-wrapper">
+    <div>
       <div className="order-type-header">
         How would you like to receive your order?
       </div>
       <div className="order-type-options">
         <div className="order-type-option">
-          <CiDeliveryTruck />
+          <CiDeliveryTruck className="order-type-icon" />
           Delivery
         </div>
         <div className="order-type-option">
-          <FaHamburger />
+          <FaHamburger className="order-type-icon" />
           Carry Out
         </div>
       </div>
