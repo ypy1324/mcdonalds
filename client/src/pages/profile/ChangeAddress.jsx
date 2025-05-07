@@ -4,7 +4,7 @@ import Button from "../../common/button/Button";
 import { Link } from "react-router-dom";
 import "./Profile.css";
 
-function Address() {
+function ChangeAddress() {
   return (
     <div className="profile-wrapper">
       <div className="profile-header">Change Address</div>
@@ -13,7 +13,7 @@ function Address() {
         <Input input="City" type="text" />
         <Input input="Province" type="text" />
         <Input input="Postal Code" type="text" />
-        <Link to="/profile/address/success">
+        <Link to="/profile/changeAddress/success">
           <Button button="Change Address" />
         </Link>
       </div>
@@ -21,4 +21,4 @@ function Address() {
   );
 }
 
-export default Address;
+export default ChangeAddress;

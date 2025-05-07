@@ -27,7 +27,7 @@ function Profile() {
           <div className="profile-key">Address</div>
           <div className="profile-value">25 Holly St, Toronto, ON, M4S 0E3</div>
         </div>
-        <Link to="/profile/address">
+        <Link to="/profile/changeAddress">
           <Button button="Change Address" />
         </Link>
       </div>

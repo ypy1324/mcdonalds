@@ -12,11 +12,12 @@ import ContactUs from "./pages/contactUs/ContactUs.jsx";
 import SignIn from "./pages/signIn/SignIn.jsx";
 import Register from "./pages/register/Register.jsx";
 import Profile from "./pages/profile/Profile.jsx";
-import Address from "./pages/profile/Address.jsx";
-import Success from "./common/success/Success.jsx";
+import ChangeAddress from "./pages/profile/ChangeAddress.jsx";
 import MyCart from "./pages/myCart/MyCart.jsx";
 import Checkout from "./pages/checkout/Checkout.jsx";
 import CheckoutSuccess from "./pages/checkout/CheckoutSuccess.jsx";
+import RegisterSuccess from "./pages/register/RegisterSuccess.jsx";
+import ChangeAddressSuccess from "./pages/profile/ChangeAddressSuccess.jsx";
 
 const router = createBrowserRouter([
   {
@@ -34,20 +35,13 @@ const router = createBrowserRouter([
       { path: "register", element: <Register /> },
       {
         path: "/register/success",
-        element: (
-          <Success
-            message1="Congratulations!"
-            message2="Your account has been successfully created!"
-          />
-        ),
+        element: <RegisterSuccess />,
       },
       { path: "/profile", element: <Profile /> },
-      { path: "/profile/address", element: <Address /> },
+      { path: "/profile/changeAddress", element: <ChangeAddress /> },
       {
-        path: "/profile/address/success",
-        element: (
-          <Success message1="Your address had been successfully changed!" />
-        ),
+        path: "/profile/changeAddress/success",
+        element: <ChangeAddressSuccess />,
       },
       { path: "/mycart", element: <MyCart /> },
       { path: "/checkout", element: <Checkout /> },

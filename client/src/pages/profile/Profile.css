@@ -64,3 +64,15 @@
 .address-form Input {
   margin-top: 3rem;
 }
+
+/* ChangeAddressSuccess.jsx */
+.change-address-success-wrapper {
+  text-align: center;
+  margin-top: 10rem;
+}
+
+.change-address-success-text {
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-medium);
+  margin: 2rem;
+}

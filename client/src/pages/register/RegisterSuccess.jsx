@@ -1,16 +1,15 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import Button from "../../common/button/Button";
-import { Link } from "react-router-dom";
-import "./Success.css";
 
-function Success(props) {
+function RegisterSuccess() {
   return (
-    <div className="success-wrapper">
+    <div className="register-success-wrapper">
       <IoIosCheckmarkCircleOutline size="5rem" />
-      <div className="success-text">
-        <div>{props.message1}</div>
-        <div>{props.message2}</div>
+      <div className="register-success-text">
+        <div>Congratulations!</div>
+        <div>Your account has been successfully created!</div>
       </div>
       <Link to="/">
         <Button button="Continue" />
@@ -19,4 +18,4 @@ function Success(props) {
   );
 }
 
-export default Success;
+export default RegisterSuccess;
