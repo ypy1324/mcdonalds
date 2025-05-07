@@ -16,6 +16,7 @@ import Address from "./pages/profile/Address.jsx";
 import Success from "./common/success/Success.jsx";
 import MyCart from "./pages/myCart/MyCart.jsx";
 import Checkout from "./pages/checkout/Checkout.jsx";
+import CheckoutSuccess from "./pages/checkout/CheckoutSuccess.jsx";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,7 @@ const router = createBrowserRouter([
       },
       { path: "/mycart", element: <MyCart /> },
       { path: "/checkout", element: <Checkout /> },
+      { path: "/checkout/success", element: <CheckoutSuccess /> },
     ],
   },
 ]);

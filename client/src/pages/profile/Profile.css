@@ -37,7 +37,7 @@
   font-weight: var(--font-weight-medium);
 }
 
-.h-line {
+.profile-divider {
   border-top: 3px solid black;
   width: 60%;
   opacity: 1;

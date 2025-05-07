@@ -31,7 +31,7 @@ function OrderSummary() {
         <div>$98.51</div>
       </div>
       <div className="place-order-wrapper">
-        <Link to="/checkout">
+        <Link to="/checkout/success">
           <button className="place-order-btn">Place Order</button>
         </Link>
       </div>
