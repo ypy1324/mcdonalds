@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import mainBurger from "../../assets/images/mainBurger.png";
 import { AiOutlineStar } from "react-icons/ai";
 
@@ -31,7 +31,9 @@ function Menu() {
       {items.map((item, i) => {
         return (
           <div key={i} className="menu-item">
-            <img className="item-image" src={mainBurger} />
+            <Link to="/ordernow/itemDetail">
+              <img className="item-image" src={mainBurger} />
+            </Link>
             <div className="item-name">{item.name}</div>
             <div className="item-price">${item.price}</div>
             <div className="item-rating">

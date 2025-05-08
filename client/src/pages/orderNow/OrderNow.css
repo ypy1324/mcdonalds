@@ -106,7 +106,8 @@
   background-color: var(--color-yellow);
   border: 2px solid var(--color-red);
   border-radius: 30px;
-  width: 100px;
+  width: 7rem;
+  padding: 0.5rem;
   justify-self: center;
 }
 

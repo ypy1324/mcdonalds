@@ -18,6 +18,7 @@ import Checkout from "./pages/checkout/Checkout.jsx";
 import CheckoutSuccess from "./pages/checkout/CheckoutSuccess.jsx";
 import RegisterSuccess from "./pages/register/RegisterSuccess.jsx";
 import ChangeAddressSuccess from "./pages/profile/ChangeAddressSuccess.jsx";
+import ItemDetail from "./pages/itemDetail/ItemDetail.jsx";
 
 const router = createBrowserRouter([
   {
@@ -46,6 +47,7 @@ const router = createBrowserRouter([
       { path: "/mycart", element: <MyCart /> },
       { path: "/checkout", element: <Checkout /> },
       { path: "/checkout/success", element: <CheckoutSuccess /> },
+      { path: "/ordernow/itemDetail", element: <ItemDetail /> },
     ],
   },
 ]);
