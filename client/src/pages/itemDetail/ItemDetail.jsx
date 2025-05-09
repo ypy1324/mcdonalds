@@ -1,13 +1,13 @@
 import React from "react";
 import ItemDescription from "./ItemDescription";
-import CommentArea from "./CommentArea";
+import ReviewArea from "./ReviewArea";
 import "./ItemDetail.css";
 
 function ItemDetail() {
   return (
     <div className="item-detail-wrapper">
       <ItemDescription />
-      <CommentArea />
+      <ReviewArea />
     </div>
   );
 }

@@ -52,3 +52,72 @@
 }
 
 /* CommentArea.jsx */
+.review-area-wrapper {
+}
+
+.review-area-header {
+  display: flex;
+  margin: 2rem 0 2rem 0;
+  align-items: center;
+  text-align: center;
+}
+
+.review-area-header > div:first-child {
+  margin-right: 1rem;
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-medium);
+}
+
+.review-area-header > div:nth-child(2) {
+  font-weight: var(--font-weight-semibold);
+  border: 2px solid var(--color-black);
+  border-radius: 40px;
+  padding: 0.3rem;
+  width: 3rem;
+  background-color: var(--color-lightyellow);
+}
+
+.review-textarea {
+  border: 3px solid var(--color-black);
+  border-radius: 20px;
+  background-color: var(--color-lightyellow);
+  width: 60vw;
+  min-width: fit-content;
+  max-width: 50rem;
+  resize: none;
+  padding: 1rem;
+  outline: none;
+  margin-bottom: 1rem;
+}
+
+.review-info {
+  margin-bottom: 1rem;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+}
+
+.reviewer-info > div:first-child {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-medium);
+  margin-right: 1rem;
+}
+
+.reviewer-info > div:nth-child(2) {
+  color: #5a5a5a;
+  font-size: var(--font-size-smallest);
+}
+
+.review-text {
+}
+
+.review-likes {
+  display: flex;
+  align-items: center;
+}
+
+.review-likes div {
+  margin-left: 0.5rem;
+}
