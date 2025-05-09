@@ -5,7 +5,7 @@
   font-weight: var(--font-weight-regular);
   margin: 5rem;
   width: 70vw;
-  min-width: 50rem;
+  /* min-width: fit-content; */
   max-width: 60rem;
 }
 
@@ -51,7 +51,7 @@
   padding: 0.5rem;
 }
 
-/* CommentArea.jsx */
+/* ReviewArea.jsx */
 .review-area-wrapper {
 }
 
@@ -120,4 +120,23 @@
 
 .review-likes div {
   margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 991px) {
+  .item-description-wrapper {
+    display: block;
+    text-align: center;
+  }
+
+  .item-detail-image {
+    width: 18rem;
+  }
+
+  .item-detail-price {
+    display: block;
+  }
+
+  .item-detail-price div {
+    margin: 1rem 0 0 0;
+  }
 }
