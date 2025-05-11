@@ -1,0 +1,24 @@
+.modal-content {
+  background-color: var(--color-lightyellow);
+  border: 3px solid var(--color-black);
+  border-radius: 30px;
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 25%);
+}
+
+.meal-modal-body {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.meal-modal-body > div {
+  align-content: center;
+  border: 3px solid var(--color-black);
+  border-radius: 20px;
+  width: 10rem;
+  height: 10rem;
+  margin: 2rem;
+  padding: 1rem;
+  font-weight: var(--font-weight-semibold);
+  /* font-size: var(--font-size-small); */
+}

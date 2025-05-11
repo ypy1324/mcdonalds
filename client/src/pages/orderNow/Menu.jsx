@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import mainBurger from "../../assets/images/mainBurger.png";
 import { AiOutlineStar } from "react-icons/ai";
+import MealModal from "../../common/meal-modal/MealModal";
 
 function Menu() {
   const params = useParams();
@@ -25,6 +26,11 @@ function Menu() {
     },
   ];
 
+  const [showModal, setShowModal] = useState(false);
+
+  const handleClose = () => setShowModal(false);
+  const handleShow = () => setShowModal(true);
+
   return (
     <div className="menu-wrapper">
       <div className="menu-header">{params.category}</div>
@@ -40,10 +46,17 @@ function Menu() {
               <AiOutlineStar />
               {item.rating} ({item.ratingCount})
             </div>
-            <button className="item-select">Select</button>
+            <button className="item-select" onClick={handleShow}>
+              Select
+            </button>
           </div>
         );
       })}
+      <MealModal
+        showModal={showModal}
+        handleShow={handleShow}
+        handleClose={handleClose}
+      />
     </div>
   );
 }
