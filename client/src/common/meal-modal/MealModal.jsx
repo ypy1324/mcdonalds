@@ -16,21 +16,17 @@ function MealModal(props) {
         <Modal.Title>Would you like to make it a meal?</Modal.Title>
       </Modal.Header>
       <Modal.Body className="meal-modal-body">
-        <div>
-          <div>
-            <IoFastFoodOutline />
-          </div>
-          Yes,
-          <br />
-          make it a meal
+        <div className="meal-modal-options">
+          <IoFastFoodOutline size="3rem" />
+          <div>Yes,</div>
+          <div>make it a meal</div>
+          <div className="meal-modal-extra">+ $3.99</div>
         </div>
-        <div>
-          <div>
-            <PiHamburger />
-          </div>
-          No,
-          <br />
-          item only
+        <div className="meal-modal-or">or</div>
+        <div className="meal-modal-options">
+          <PiHamburger size="3rem" />
+          <div>No,</div>
+          <div>item only</div>
         </div>
       </Modal.Body>
     </Modal>
