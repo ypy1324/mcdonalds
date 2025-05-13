@@ -3,6 +3,8 @@ import { useParams, Link } from "react-router-dom";
 import mainBurger from "../../assets/images/mainBurger.png";
 import { AiOutlineStar } from "react-icons/ai";
 import MealModal from "../../common/meal-modal/MealModal";
+import Card from "react-bootstrap/Card";
+import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 
 function Menu() {
   const params = useParams();
@@ -27,6 +29,7 @@ function Menu() {
   ];
 
   const [showModal, setShowModal] = useState(false);
+  const [showCard, setShowCard] = useState(false);
 
   const handleClose = () => setShowModal(false);
   const handleShow = () => setShowModal(true);
@@ -57,6 +60,10 @@ function Menu() {
         handleShow={handleShow}
         handleClose={handleClose}
       />
+      {/* <Card body>
+        <IoIosCheckmarkCircleOutline size="3rem" />
+        <div>Item has been added to cart</div>
+      </Card> */}
     </div>
   );
 }
