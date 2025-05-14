@@ -57,6 +57,7 @@
 
 .quantity-symbol {
   font-size: var(--font-size-large);
+  cursor: pointer;
 }
 
 .cart-item-quantity {
@@ -72,12 +73,18 @@
 .cart-item-remove-btn {
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-medium);
-  border: 3px solid var(--color-red);
+  border: 2px solid var(--color-red);
   border-radius: 30px;
   background-color: var(--color-yellow);
   color: var(--color-red);
   margin: 0.5rem;
   width: fit-content;
+  transition: 0.3s;
+}
+
+.cart-item-remove-btn:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
 }
 
 /* CartCheckout.jsx */

@@ -49,6 +49,12 @@
   border-radius: 30px;
   width: 10rem;
   padding: 0.5rem;
+  transition: 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
 }
 
 /* ReviewArea.jsx */

@@ -79,6 +79,11 @@
 
 .menu-item-image {
   width: 15rem;
+  transition: 0.3s;
+}
+
+.menu-item-image:hover {
+  transform: scale(1.1);
 }
 
 .menu-item-name {
@@ -109,6 +114,13 @@
   width: 7rem;
   padding: 0.5rem;
   justify-self: center;
+  transition: 0.3s;
+}
+
+.menu-item-select:hover {
+  background-color: var(--color-red);
+  color: var(--color-white);
+  transform: scale(1.05);
 }
 
 .card {
