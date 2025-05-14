@@ -7,7 +7,7 @@ function RegisterSuccess() {
   return (
     <div className="register-success-wrapper">
       <IoIosCheckmarkCircleOutline size="5rem" />
-      <div className="register-success-text">
+      <div>
         <div>Congratulations!</div>
         <div>Your account has been successfully created!</div>
       </div>

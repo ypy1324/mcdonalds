@@ -41,15 +41,15 @@ function Menu() {
         return (
           <div key={i} className="menu-item">
             <Link to="/ordernow/itemDetail">
-              <img className="item-image" src={mainBurger} />
+              <img className="menu-item-image" src={mainBurger} />
             </Link>
-            <div className="item-name">{item.name}</div>
-            <div className="item-price">${item.price}</div>
-            <div className="item-rating">
+            <div className="menu-item-name">{item.name}</div>
+            <div className="menu-item-price">${item.price}</div>
+            <div className="menu-item-rating">
               <AiOutlineStar />
               {item.rating} ({item.ratingCount})
             </div>
-            <button className="item-select" onClick={handleShow}>
+            <button className="menu-item-select" onClick={handleShow}>
               Select
             </button>
           </div>

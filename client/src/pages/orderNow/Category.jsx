@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import CategoryCanvas from "./CategoryCanvas";
-import "./OrderNow.css";
 
 function Category() {
   const categories = [
@@ -18,10 +17,10 @@ function Category() {
 
   return (
     <div className="category-wrapper">
-      <div className="small-screen">
+      <div className="category-small-screen">
         <CategoryCanvas />
       </div>
-      <div className="large-screen">
+      <div className="category-large-screen">
         {categories.map((category, i) => {
           return (
             <NavLink

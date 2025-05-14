@@ -55,7 +55,7 @@
   margin-top: 10rem;
 }
 
-.register-success-text {
+.register-success-wrapper > div {
   font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-medium);
   margin: 2rem;
@@ -69,6 +69,10 @@
   .register-form {
     height: 55rem;
     margin-bottom: 2rem;
+  }
+
+  .register-form-fields div:first-child {
+    margin: 0;
   }
 
   .register-success-text {

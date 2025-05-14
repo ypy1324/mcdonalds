@@ -2,7 +2,6 @@ import React from "react";
 import Input from "../../common/input/Input";
 import Button from "../../common/button/Button";
 import { Link } from "react-router-dom";
-import "./Profile.css";
 
 function ChangeAddress() {
   return (

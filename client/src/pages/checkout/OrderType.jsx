@@ -18,13 +18,11 @@ function OrderType() {
           Carry Out
         </div>
       </div>
-      <div>
-        <div className="order-type-delivering-to">Delivering to</div>
-        <div className="order-type-address">2221 Yonge St</div>
-        <div className="order-type-not-right-address">
-          Not the right address?
-        </div>
-        <div className="order-type-change">Change</div>
+      <div className="delivery-address">
+        <div>Delivering to</div>
+        <div>2221 Yonge St</div>
+        <div>Not the right address?</div>
+        <div>Change</div>
       </div>
     </div>
   );

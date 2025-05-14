@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Button from "react-bootstrap/Button";
 import { NavLink } from "react-router-dom";
-import "./OrderNow.css";
 
 function CategoryCanvas() {
   const [showMenu, setShowMenu] = useState(false);

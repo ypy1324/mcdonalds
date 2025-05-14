@@ -1,6 +1,6 @@
 import React from "react";
-import ItemsList from "./ItemsList";
-import ItemsCheckout from "./ItemsCheckout";
+import CartList from "./CartList";
+import CartCheckout from "./CartCheckout";
 import "./MyCart.css";
 
 function MyCart() {
@@ -8,8 +8,8 @@ function MyCart() {
     <div className="mycart-wrapper">
       <div className="mycart-header">MyCart</div>
       <div className="mycart-content">
-        <ItemsList />
-        <ItemsCheckout />
+        <CartList />
+        <CartCheckout />
       </div>
     </div>
   );

@@ -7,9 +7,7 @@ function ChangeAddressSuccess() {
   return (
     <div className="change-address-success-wrapper">
       <IoIosCheckmarkCircleOutline size="5rem" />
-      <div className="change-address-success-text">
-        <div>Your address has been successfully updated!</div>
-      </div>
+      <div>Your address has been successfully updated!</div>
       <Link to="/">
         <Button button="Continue" />
       </Link>

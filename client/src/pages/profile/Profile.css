@@ -44,7 +44,7 @@
   justify-self: center;
 }
 
-/* Address.jsx */
+/* ChangeAddress.jsx */
 .address-form {
   display: flex;
   flex-direction: column;
@@ -71,7 +71,7 @@
   margin-top: 10rem;
 }
 
-.change-address-success-text {
+.change-address-success-wrapper div {
   font-weight: var(--font-weight-semibold);
   font-size: var(--font-size-medium);
   margin: 2rem;
