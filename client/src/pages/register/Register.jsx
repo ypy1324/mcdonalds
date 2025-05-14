@@ -26,7 +26,7 @@ function Register() {
         <Link to="/register/success">
           <Button button="Sign Up" />
         </Link>
-        <div className="sign-in">
+        <div className="sign-in-area">
           <div>Already have an account?</div>
           <Link to="/signin" className="sign-in-link">
             Sign In

@@ -12,7 +12,7 @@ function SignIn() {
         <Input input="Email" type="email" />
         <Input input="Password" type="password" />
         <Button button="Sign In" />
-        <div className="register">
+        <div className="register-area">
           <div>Don't have an account?</div>
           <Link to="/register" className="register-link">
             Register

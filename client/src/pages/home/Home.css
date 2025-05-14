@@ -5,7 +5,6 @@
 .main-burger {
   width: 100vw;
   max-width: 60rem;
-  height: auto;
   display: block;
   margin: auto;
 }
@@ -17,5 +16,4 @@
   font-size: clamp(1rem, 12vw, 12rem);
   bottom: 0;
   justify-self: anchor-center;
-  white-space: nowrap;
 }
