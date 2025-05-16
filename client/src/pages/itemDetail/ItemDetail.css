@@ -83,17 +83,36 @@
   background-color: var(--color-lightyellow);
 }
 
-.review-textarea {
-  border: 3px solid var(--color-black);
-  border-radius: 20px;
-  background-color: var(--color-lightyellow);
+.review-input {
   width: 60vw;
   min-width: fit-content;
   max-width: 50rem;
+}
+
+.review-input textarea {
+  border: 3px solid var(--color-black);
+  border-radius: 20px;
+  background-color: var(--color-lightyellow);
+  width: 100%;
   resize: none;
   padding: 1rem;
   outline: none;
   margin-bottom: 1rem;
+  box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 25%);
+}
+
+.review-input div {
+  text-align: right;
+}
+
+.review-input button {
+  font-weight: var(--font-weight-medium);
+  color: var(--color-white);
+  background-color: var(--color-black);
+  border: 1px solid var(--color-black);
+  border-radius: 20px;
+  width: 5rem;
+  padding: 0.5rem;
 }
 
 .review-info {

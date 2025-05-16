@@ -8,7 +8,12 @@ function ReviewArea() {
         <div>Reviews</div>
         <div>2</div>
       </div>
-      <textarea className="review-textarea" />
+      <div className="review-input">
+        <textarea placeholder="Add a review..." />
+        <div>
+          <button>Submit</button>
+        </div>
+      </div>
       <div className="review-info">
         <div className="reviewer-info">
           <div>Mark</div>
