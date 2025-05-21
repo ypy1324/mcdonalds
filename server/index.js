@@ -5,6 +5,8 @@ const app = express();
 const port = 3000;
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.listen(port, () => {
   mongoose
@@ -22,6 +24,11 @@ app.listen(port, () => {
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
+});
+
+app.post("/api/test", (req, res) => {
+  console.log(req.body);
+  res.status(200).json({ success: true });
 });
 
 // app.get("*", (req, res) => {
