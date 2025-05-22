@@ -8,10 +8,12 @@ app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const { MenuItem } = require("./model/MenuItem");
+
 app.listen(port, () => {
   mongoose
     .connect(
-      "mongodb+srv://ypy1324:1q2w3e4r@mcdonalds.mqbllit.mongodb.net/?retryWrites=true&w=majority&appName=mcdonalds"
+      "mongodb+srv://ypy1324:1q2w3e4r@mcdonalds.mqbllit.mongodb.net/mcdonalds?retryWrites=true&w=majority&appName=mcdonalds"
     )
     .then(() => {
       console.log(`Example app listening on port ${port}...`);
@@ -26,11 +28,18 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
-app.post("/api/test", (req, res) => {
-  console.log(req.body);
-  res.status(200).json({ success: true });
-});
-
-// app.get("*", (req, res) => {
+// app.get("/*", (req, res) => {
 //   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 // });
+
+app.get("/api/menu/item", (req, res) => {
+  MenuItem.find()
+    .exec()
+    .then((doc) => {
+      res.status(200).json({ success: true, item: doc });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json({ success: false });
+    });
+});
