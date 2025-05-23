@@ -22,6 +22,7 @@ function Menu() {
       .then((response) => {
         if (response.data.success) {
           setMenuItems(response.data.item);
+          console.log(response.data.item[0].image);
         } else {
           console.log("Failed to fetch menu items");
         }

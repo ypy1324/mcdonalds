@@ -28,10 +28,6 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
-// app.get("/*", (req, res) => {
-//   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
-// });
-
 app.get("/api/menu/item", (req, res) => {
   MenuItem.find()
     .exec()

@@ -6,14 +6,14 @@ import { NavLink } from "react-router-dom";
 function CategoryCanvas() {
   const [showMenu, setShowMenu] = useState(false);
   const categories = [
-    "All",
     "Breakfast",
     "Beef",
     "Chicken",
     "Wraps",
-    "Snacks & Sides",
+    "Sides",
     "Desserts",
     "Beverages",
+    "McCafe",
     "Happy Meal",
   ];
 
