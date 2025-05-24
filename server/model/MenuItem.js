@@ -8,6 +8,7 @@ const menuItemSchema = new mongoose.Schema({
   rating: Number,
   ratingCount: Number,
   description: String,
+  category: String,
 });
 
 const MenuItem = mongoose.model("MenuItem", menuItemSchema);
