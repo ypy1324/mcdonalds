@@ -32,9 +32,39 @@ function Menu() {
       });
   }, []);
 
+  const clickme = () => {
+    let body = {
+      name: "Barbeque Sauce",
+      image: "https://i.imgur.com/bhIZBG3.png",
+      price: 0.5,
+      rating: 0,
+      ratingCount: 0,
+      description:
+        "Sweet? Spicy? Tangy? Savour it all, with this rich blend of tomato, vinegar and spices.",
+      category: "Sides",
+    };
+    axios
+      .post("/api/menu/add", body)
+      .then((res) => {
+        if (res.data.success) {
+          console.log("Item added to cart successfully");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="menu-wrapper">
       <div className="menu-header">{params.category}</div>
+      <button
+        onClick={() => {
+          clickme();
+        }}
+      >
+        click
+      </button>
       {menuItems.map((item, i) => {
         return (
           <div key={i} className="menu-item">

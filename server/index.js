@@ -39,3 +39,19 @@ app.get("/api/menu/item", (req, res) => {
       res.status(400).json({ success: false });
     });
 });
+
+app.post("/api/menu/add", (req, res) => {
+  const item = new MenuItem({
+    name: req.body.name,
+    image: req.body.image,
+    price: req.body.price,
+    calorie: req.body.calorie,
+    rating: req.body.rating,
+    ratingCount: req.body.ratingCount,
+    description: req.body.description,
+    category: req.body.category,
+  });
+  item.save().then(() => {
+    res.status(200).json({ success: true });
+  });
+});
