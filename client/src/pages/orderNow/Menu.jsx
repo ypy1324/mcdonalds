@@ -34,14 +34,13 @@ function Menu() {
 
   const clickme = () => {
     let body = {
-      name: "Barbeque Sauce",
-      image: "https://i.imgur.com/bhIZBG3.png",
-      price: 0.5,
+      name: "",
+      image: "",
+      price: 0,
       rating: 0,
       ratingCount: 0,
-      description:
-        "Sweet? Spicy? Tangy? Savour it all, with this rich blend of tomato, vinegar and spices.",
-      category: "Sides",
+      description: "",
+      category: "Desserts",
     };
     axios
       .post("/api/menu/add", body)
