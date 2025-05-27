@@ -17,12 +17,12 @@ function Menu() {
   const handleShow = () => setShowModal(true);
 
   useEffect(() => {
+    let body = { category: params.category };
     axios
-      .get("/api/menu/item")
-      .then((response) => {
-        if (response.data.success) {
-          setMenuItems(response.data.item);
-          console.log(response.data.item[0].image);
+      .post("/api/menu/item", body)
+      .then((res) => {
+        if (res.data.success) {
+          setMenuItems(res.data.item);
         } else {
           console.log("Failed to fetch menu items");
         }
@@ -30,40 +30,11 @@ function Menu() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
-
-  const clickme = () => {
-    let body = {
-      name: "",
-      image: "",
-      price: 0,
-      rating: 0,
-      ratingCount: 0,
-      description: "",
-      category: "Desserts",
-    };
-    axios
-      .post("/api/menu/add", body)
-      .then((res) => {
-        if (res.data.success) {
-          console.log("Item added to cart successfully");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
+  }, [params.category]);
 
   return (
     <div className="menu-wrapper">
       <div className="menu-header">{params.category}</div>
-      <button
-        onClick={() => {
-          clickme();
-        }}
-      >
-        click
-      </button>
       {menuItems.map((item, i) => {
         return (
           <div key={i} className="menu-item">

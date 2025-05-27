@@ -9,12 +9,10 @@ function CategoryCanvas() {
     "Breakfast",
     "Beef",
     "Chicken",
-    "Wraps",
     "Sides",
     "Desserts",
     "Beverages",
     "McCafe",
-    "Happy Meal",
   ];
 
   const handleClose = () => setShowMenu(false);

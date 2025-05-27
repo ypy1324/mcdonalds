@@ -7,12 +7,10 @@ function Category() {
     "Breakfast",
     "Beef",
     "Chicken",
-    "Wraps",
     "Sides",
     "Desserts",
     "Beverages",
     "McCafe",
-    "Happy Meal",
   ];
 
   return (

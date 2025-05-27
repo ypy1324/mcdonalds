@@ -28,8 +28,8 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
-app.get("/api/menu/item", (req, res) => {
-  MenuItem.find()
+app.post("/api/menu/item", (req, res) => {
+  MenuItem.find({ category: req.body.category })
     .exec()
     .then((doc) => {
       res.status(200).json({ success: true, item: doc });
@@ -38,20 +38,4 @@ app.get("/api/menu/item", (req, res) => {
       console.log(err);
       res.status(400).json({ success: false });
     });
-});
-
-app.post("/api/menu/add", (req, res) => {
-  const item = new MenuItem({
-    name: req.body.name,
-    image: req.body.image,
-    price: req.body.price,
-    calorie: req.body.calorie,
-    rating: req.body.rating,
-    ratingCount: req.body.ratingCount,
-    description: req.body.description,
-    category: req.body.category,
-  });
-  item.save().then(() => {
-    res.status(200).json({ success: true });
-  });
 });
