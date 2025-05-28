@@ -19,7 +19,8 @@ function Header() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="m-auto">
             {navLink.map((link, i) => {
-              const linkLower = link.toLowerCase().replace(" ", "");
+              let linkLower = link.toLowerCase().replace(" ", "");
+              linkLower === "ordernow" && (linkLower = "ordernow/Breakfast");
               return (
                 <NavLink
                   key={i}
