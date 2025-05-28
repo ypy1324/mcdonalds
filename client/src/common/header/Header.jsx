@@ -20,7 +20,7 @@ function Header() {
           <Nav className="m-auto">
             {navLink.map((link, i) => {
               let linkLower = link.toLowerCase().replace(" ", "");
-              linkLower === "ordernow" && (linkLower = "ordernow/Breakfast");
+              // linkLower === "ordernow" && (linkLower = "ordernow/Breakfast");
               return (
                 <NavLink
                   key={i}

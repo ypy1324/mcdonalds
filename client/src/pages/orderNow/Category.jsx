@@ -1,8 +1,9 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React, { useEffect } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import CategoryCanvas from "./CategoryCanvas";
 
 function Category() {
+  const navigate = useNavigate();
   const categories = [
     "Breakfast",
     "Beef",
@@ -12,6 +13,10 @@ function Category() {
     "Beverages",
     "McCafe",
   ];
+
+  useEffect(() => {
+    navigate("/ordernow/Breakfast");
+  }, []);
 
   return (
     <div className="category-wrapper">
