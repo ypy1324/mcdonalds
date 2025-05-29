@@ -39,3 +39,15 @@ app.post("/api/menu/item", (req, res) => {
       res.status(400).json({ success: false });
     });
 });
+
+app.post("/api/menu/item/detail", (req, res) => {
+  MenuItem.findOne({ name: req.body.itemName })
+    .exec()
+    .then((doc) => {
+      res.status(200).json({ success: true, item: doc });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json({ success: false });
+    });
+});
