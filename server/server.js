@@ -3,6 +3,7 @@ const path = require("path");
 const mongoose = require("mongoose");
 const app = express();
 const port = 3000;
+const config = require("./config/key.js");
 
 app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(express.json());
@@ -12,9 +13,7 @@ const { MenuItem } = require("./model/MenuItem");
 
 app.listen(port, () => {
   mongoose
-    .connect(
-      "mongodb+srv://ypy1324:1q2w3e4r@mcdonalds.mqbllit.mongodb.net/mcdonalds?retryWrites=true&w=majority&appName=mcdonalds"
-    )
+    .connect(config.mongoURI)
     .then(() => {
       console.log(`Example app listening on port ${port}...`);
       console.log("MongoDB connected successfully...");
