@@ -16,7 +16,7 @@ function Register() {
   const [postalCode, setPostalCode] = useState("");
 
   const registerUser = async (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     if (
       !(
         name &&
