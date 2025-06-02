@@ -27,6 +27,7 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
+// API to get menu items by category
 app.post("/api/menu/item", (req, res) => {
   MenuItem.find({ category: req.body.category })
     .exec()
@@ -39,6 +40,7 @@ app.post("/api/menu/item", (req, res) => {
     });
 });
 
+// API to get details of a specific menu item by name
 app.post("/api/menu/item/detail", (req, res) => {
   MenuItem.findOne({ name: req.body.itemName })
     .exec()
