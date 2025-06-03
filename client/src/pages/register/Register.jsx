@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Button from "../../common/button/Button";
 import Input from "../../common/input/Input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import firebase from "../../firebase";
+import axios from "axios";
 import "./Register.css";
 
 function Register() {
@@ -15,8 +16,9 @@ function Register() {
   const [province, setProvince] = useState("");
   const [postalCode, setPostalCode] = useState("");
 
+  const navigate = useNavigate();
+
   const registerUser = async (e) => {
-    // e.preventDefault();
     if (
       !(
         name &&
@@ -40,7 +42,19 @@ function Register() {
     await createdUser.user.updateProfile({
       displayName: name,
     });
-    console.log(createdUser.user);
+
+    let body = {
+      uid: createdUser.user.multiFactor.user.uid,
+      email: createdUser.user.multiFactor.user.email,
+      displayName: createdUser.user.multiFactor.user.displayName,
+    };
+    axios.post("/api/user/register", body).then((res) => {
+      if (res.data.success) {
+        navigate("/register/success");
+      } else {
+        return alert("Registration failed. Please try again.");
+      }
+    });
   };
 
   return (
@@ -91,9 +105,7 @@ function Register() {
             />
           </div>
         </div>
-        <Link to="/register/success">
-          <Button button="Sign Up" onClick={registerUser} />
-        </Link>
+        <Button button="Sign Up" onClick={registerUser} />
         <div className="sign-in-area">
           <div>Already have an account?</div>
           <Link to="/signin" className="sign-in-link">
