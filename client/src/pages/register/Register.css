@@ -37,6 +37,10 @@
   margin-right: 1rem;
 }
 
+.sign-up-btn {
+  margin-top: 2rem;
+}
+
 .sign-in-area {
   display: flex;
   margin-top: 2rem;

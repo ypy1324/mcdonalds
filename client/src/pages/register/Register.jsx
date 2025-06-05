@@ -105,7 +105,9 @@ function Register() {
             />
           </div>
         </div>
-        <Button button="Sign Up" onClick={registerUser} />
+        <div className="sign-up-btn">
+          <Button button="Sign Up" onClick={registerUser} />
+        </div>
         <div className="sign-in-area">
           <div>Already have an account?</div>
           <Link to="/signin" className="sign-in-link">
