@@ -3,6 +3,8 @@ import { createRoot } from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import store from "./reducer/store.jsx";
+import { Provider } from "react-redux";
 import App from "./App.jsx";
 import Home from "./pages/home/Home.jsx";
 import OrderNow from "./pages/orderNow/OrderNow.jsx";
@@ -22,7 +24,11 @@ import ItemDetail from "./pages/itemDetail/ItemDetail.jsx";
 
 const router = createBrowserRouter([
   {
-    element: <App />,
+    element: (
+      <Provider store={store}>
+        <App />
+      </Provider>
+    ),
     children: [
       { path: "/", element: <Home /> },
       {
