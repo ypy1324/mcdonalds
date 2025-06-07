@@ -1,13 +1,22 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import { useSelector } from "react-redux";
+import firebase from "../../firebase";
 import "./Header.css";
 
 function Header() {
   const navLink = ["Order Now", "Promotions", "Contact Us"];
+  const user = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
+  const logoutHandler = () => {
+    firebase.auth().signOut();
+    navigate("/");
+  };
 
   return (
     <Navbar expand="lg">
@@ -20,7 +29,6 @@ function Header() {
           <Nav className="m-auto">
             {navLink.map((link, i) => {
               let linkLower = link.toLowerCase().replace(" ", "");
-              // linkLower === "ordernow" && (linkLower = "ordernow/Breakfast");
               return (
                 <NavLink
                   key={i}
@@ -35,14 +43,18 @@ function Header() {
             })}
           </Nav>
           <Nav>
-            <NavLink
-              to="/signin"
-              className={({ isActive }) =>
-                isActive ? "nav-link active-nav" : "nav-link"
-              }
-            >
-              Sign In
-            </NavLink>
+            {user.accessToken ? (
+              <Navbar.Text onClick={() => logoutHandler()}>Logout</Navbar.Text>
+            ) : (
+              <NavLink
+                to="/signin"
+                className={({ isActive }) =>
+                  isActive ? "nav-link active-nav" : "nav-link"
+                }
+              >
+                Sign In
+              </NavLink>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Container>
