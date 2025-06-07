@@ -8,9 +8,8 @@ const config = require("./config/key.js");
 app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-const { MenuItem } = require("./model/MenuItem");
-const { User } = require("./model/User");
+app.use("/api/menu", require("./router/menu.js"));
+app.use("/api/user", require("./router/user.js"));
 
 app.listen(port, () => {
   mongoose
@@ -28,42 +27,3 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "../client/dist/index.html"));
 });
 
-// API to get menu items by category
-app.post("/api/menu/item", (req, res) => {
-  MenuItem.find({ category: req.body.category })
-    .exec()
-    .then((doc) => {
-      res.status(200).json({ success: true, item: doc });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json({ success: false });
-    });
-});
-
-// API to get details of a specific menu item by name
-app.post("/api/menu/item/detail", (req, res) => {
-  MenuItem.findOne({ name: req.body.itemName })
-    .exec()
-    .then((doc) => {
-      res.status(200).json({ success: true, item: doc });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json({ success: false });
-    });
-});
-
-// API to register a new user
-app.post("/api/user/register", (req, res) => {
-  const user = new User(req.body);
-  user
-    .save()
-    .then(() => {
-      res.status(200).json({ success: true });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json({ success: false });
-    });
-});
