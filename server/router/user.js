@@ -3,7 +3,7 @@ const router = express.Router();
 const { User } = require("../model/User");
 
 // API to register a new user
-app.post("/register", (req, res) => {
+router.post("/register", (req, res) => {
   const user = new User(req.body);
   user
     .save()
