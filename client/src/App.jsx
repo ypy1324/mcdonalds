@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "./common/header/Header.jsx";
 import { Outlet } from "react-router-dom";
-import CartButton from "./pages/cartButton/CartButton.jsx";
+import CartButton from "./common/cartButton/CartButton.jsx";
 import { useDispatch } from "react-redux";
 import { loginUser, clearUser } from "./reducer/userSlice.jsx";
 import firebase from "./firebase.jsx";
