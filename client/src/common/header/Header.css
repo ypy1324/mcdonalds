@@ -21,7 +21,7 @@
 }
 
 .nav-link:hover {
-  transform: scale(1.2);
+  transform: scale(1.15);
 }
 
 .active-nav {
@@ -29,4 +29,37 @@
   border-radius: 50px;
   box-shadow: 10px 10px 4px 0px rgba(0, 0, 0, 25%);
   transform: scale(1.1);
+}
+
+.sign-in-user {
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-semibold);
+  background-color: var(--color-yellow);
+  border: none;
+  --bs-btn-active-bg: none;
+  --bs-btn-hover-bg: none;
+  transition: 0.3s;
+}
+
+.sign-in-user:hover {
+  transform: scale(1.15);
+}
+
+.dropdown-menu {
+  background-color: var(--color-yellow);
+  --bs-dropdown-link-hover-bg: var(--color-yellow);
+  --bs-dropdown-link-active-bg: var(--color-yellow);
+  border-radius: 10px;
+  box-shadow: 5px 5px 2px 0px rgba(0, 0, 0, 25%);
+}
+
+.dropdown-items {
+  color: var(--color-black);
+  text-decoration: none;
+}
+
+.dropdown-text {
+  margin-left: 0.5rem;
+  color: var(--color-black);
+  text-decoration: none;
 }
