@@ -5,6 +5,7 @@ import CartButton from "./common/cartButton/CartButton.jsx";
 import { useDispatch } from "react-redux";
 import { loginUser, clearUser } from "./reducer/userSlice.jsx";
 import firebase from "./firebase.jsx";
+import axios from "axios";
 import "./App.css";
 
 function App() {

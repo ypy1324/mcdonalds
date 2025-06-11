@@ -16,4 +16,16 @@ router.post("/register", (req, res) => {
     });
 });
 
+// API to get user details by UID
+router.post("/getUserByUid", (req, res) => {
+  User.findOne({ uid: req.params.uid })
+    .then((user) => {
+      res.status(200).json({ success: true, user });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json({ success: false });
+    });
+});
+
 module.exports = router;

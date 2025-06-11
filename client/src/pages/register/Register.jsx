@@ -45,8 +45,15 @@ function Register() {
 
     let body = {
       uid: createdUser.user.multiFactor.user.uid,
-      email: createdUser.user.multiFactor.user.email,
       displayName: createdUser.user.multiFactor.user.displayName,
+      email: createdUser.user.multiFactor.user.email,
+      rewardPoints: 0,
+      address: {
+        street: streetAddress,
+        city: city,
+        province: province,
+        postalCode: postalCode,
+      },
     };
     axios.post("/api/user/register", body).then((res) => {
       if (res.data.success) {
