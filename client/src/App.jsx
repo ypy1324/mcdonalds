@@ -14,7 +14,19 @@ function App() {
   useEffect(() => {
     firebase.auth().onAuthStateChanged((userInfo) => {
       if (userInfo !== null) {
-        dispatch(loginUser(userInfo.multiFactor.user));
+        let body = { uid: userInfo.multiFactor.user.uid };
+        axios
+          .post("api/user/getUserByUid", body)
+          .then((res) => {
+            if (res.data.success) {
+              dispatch(loginUser(res.data.user));
+            } else {
+              console.log("Failed to fetch user data");
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       } else {
         dispatch(clearUser());
       }

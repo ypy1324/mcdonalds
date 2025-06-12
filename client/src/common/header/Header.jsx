@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import { FaRegUser } from "react-icons/fa6";
@@ -20,10 +20,6 @@ function Header() {
     firebase.auth().signOut();
     navigate("/");
   };
-
-  useEffect(() => {
-    console.log(user);
-  }, [user]);
 
   return (
     <Navbar expand="lg">
@@ -50,7 +46,7 @@ function Header() {
             })}
           </Nav>
           <Nav>
-            {user.accessToken ? (
+            {user.uid ? (
               <Dropdown>
                 <Dropdown.Toggle className="sign-in-user">
                   Hello, Mark!

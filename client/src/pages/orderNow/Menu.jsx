@@ -27,8 +27,8 @@ function Menu() {
           console.log("Failed to fetch menu items");
         }
       })
-      .catch((error) => {
-        console.log(error);
+      .catch((err) => {
+        console.log(err);
       });
   }, [params.category]);
 

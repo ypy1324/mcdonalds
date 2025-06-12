@@ -11,7 +11,7 @@ function ReviewArea() {
         <div>Reviews</div>
         <div>2</div>
       </div>
-      {user.accessToken ? (
+      {user.uid ? (
         <div className="review-input">
           <textarea placeholder="Add a review..." />
           <div>
