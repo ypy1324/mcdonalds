@@ -10,11 +10,11 @@ function Menu() {
   const params = useParams();
 
   const [menuItems, setMenuItems] = useState([]);
-  const [showModal, setShowModal] = useState(false);
-  const [showCard, setShowCard] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
+  // const [showCard, setShowCard] = useState(false);
 
-  const handleClose = () => setShowModal(false);
-  const handleShow = () => setShowModal(true);
+  // const handleClose = () => setShowModal(false);
+  // const handleShow = () => setShowModal(true);
 
   useEffect(() => {
     let body = { category: params.category };
@@ -47,17 +47,17 @@ function Menu() {
               <AiOutlineStar />
               {item.rating} ({item.ratingCount})
             </div>
-            <button className="menu-item-select" onClick={handleShow}>
+            <button className="menu-item-select" onClick={() => {}}>
               Select
             </button>
           </div>
         );
       })}
-      <MealModal
+      {/* <MealModal
         showModal={showModal}
         handleShow={handleShow}
         handleClose={handleClose}
-      />
+      /> */}
       {/* <Card body>
         <IoIosCheckmarkCircleOutline size="3rem" />
         <div>Item has been added to cart</div>

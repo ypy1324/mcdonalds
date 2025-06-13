@@ -7,6 +7,7 @@ function CartButton() {
   return (
     <Link to="/mycart" className="cart-button">
       <RiShoppingBasketLine />
+      <div className="cart-qty">0</div>
     </Link>
   );
 }
