@@ -47,7 +47,6 @@ function Register() {
       uid: createdUser.user.multiFactor.user.uid,
       displayName: createdUser.user.multiFactor.user.displayName,
       email: createdUser.user.multiFactor.user.email,
-      rewardPoints: 0,
       address: {
         street: streetAddress,
         city: city,

@@ -4,7 +4,7 @@ const userSchema = new mongoose.Schema({
   uid: String,
   displayName: String,
   email: String,
-  rewardPoints: Number,
+  rewardPoints: { type: Number, default: 0 },
   address: {
     street: String,
     city: String,
