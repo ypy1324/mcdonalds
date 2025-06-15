@@ -15,4 +15,20 @@ router.post("/getCartQuantity", (req, res) => {
     });
 });
 
+// API to add an item to the cart
+router.post("/addToCart", (req, res) => {
+  Cart.updateOne(
+    { userUid: req.body.userUid },
+    { $inc: { quantity: 1 }, $push: { items: req.body.item } }
+  )
+    .exec()
+    .then((cart) => {
+      res.status(200).json({ success: true });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json({ success: false });
+    });
+});
+
 module.exports = router;

@@ -4,10 +4,12 @@ import { AiOutlineStar } from "react-icons/ai";
 import MealModal from "../../common/meal-modal/MealModal";
 import Card from "react-bootstrap/Card";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { useSelector } from "react-redux";
 import axios from "axios";
 
 function Menu() {
   const params = useParams();
+  const user = useSelector((state) => state.user);
 
   const [menuItems, setMenuItems] = useState([]);
   // const [showModal, setShowModal] = useState(false);
@@ -32,6 +34,25 @@ function Menu() {
       });
   }, [params.category]);
 
+  const handleAddToCart = (item) => {
+    let body = {
+      userUid: user.uid,
+      item: item,
+    };
+    axios
+      .post("/api/cart/addToCart", body)
+      .then((res) => {
+        if (res.data.success) {
+          console.log("Item added to cart successfully");
+        } else {
+          console.log("Failed to add item to cart");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="menu-wrapper">
       <div className="menu-header">{params.category}</div>
@@ -47,7 +68,12 @@ function Menu() {
               <AiOutlineStar />
               {item.rating} ({item.ratingCount})
             </div>
-            <button className="menu-item-select" onClick={() => {}}>
+            <button
+              className="menu-item-select"
+              onClick={() => {
+                handleAddToCart(item);
+              }}
+            >
               Select
             </button>
           </div>
