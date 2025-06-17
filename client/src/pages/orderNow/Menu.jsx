@@ -68,14 +68,16 @@ function Menu() {
               <AiOutlineStar />
               {item.rating} ({item.ratingCount})
             </div>
-            <button
-              className="menu-item-select"
-              onClick={() => {
-                handleAddToCart(item);
-              }}
-            >
-              Select
-            </button>
+            {user.uid && (
+              <button
+                className="menu-item-select"
+                onClick={() => {
+                  handleAddToCart(item);
+                }}
+              >
+                Select
+              </button>
+            )}
           </div>
         );
       })}
