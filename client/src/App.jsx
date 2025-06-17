@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Header from "./common/header/Header.jsx";
 import { Outlet } from "react-router-dom";
 import CartButton from "./common/cartButton/CartButton.jsx";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { loginUser, clearUser } from "./reducer/userSlice.jsx";
 import firebase from "./firebase.jsx";
 import axios from "axios";
@@ -10,6 +10,7 @@ import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((userInfo) => {
@@ -37,7 +38,7 @@ function App() {
     <div>
       <Header />
       <Outlet />
-      <CartButton />
+      {user.uid && <CartButton />}
     </div>
   );
 }
