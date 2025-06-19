@@ -1,21 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function CartCheckout() {
+function CartCheckout(props) {
+  const totalItems = props.cartItems.length;
+  const subTotalPrice = props.cartItems.reduce(
+    (acc, item) => acc + item.price,
+    0
+  );
+  const tax = (subTotalPrice * 0.13).toFixed(2);
+  const totalPrice = +subTotalPrice + +tax;
+
   return (
     <div className="cart-checkout-wrapper">
-      <div className="cart-checkout-items-count">2 Items</div>
+      <div className="cart-checkout-items-count">{totalItems} Items</div>
       <div className="cart-checkout-price">
         <div>Subtotal</div>
-        <div>$24.46</div>
+        <div>${subTotalPrice}</div>
       </div>
       <div className="cart-checkout-price">
         <div>Tax</div>
-        <div>$2.76</div>
+        <div>${tax}</div>
       </div>
       <div className="cart-checkout-price cart-checkout-total">
         <div>Total</div>
-        <div>$98.51</div>
+        <div>${totalPrice}</div>
       </div>
       <div className="cart-checkout-btn-wrapper">
         <Link to="/checkout">

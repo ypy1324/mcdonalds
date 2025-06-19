@@ -31,4 +31,18 @@ router.post("/addToCart", (req, res) => {
     });
 });
 
+// API to fetch all items in the cart for a user
+router.post("/getCartItems", (req, res) => {
+  Cart.findOne({ userUid: req.body.userId })
+    .populate("items")
+    .exec()
+    .then((cartItems) => {
+      res.status(200).json({ success: true, items: cartItems.items });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json({ success: false });
+    });
+});
+
 module.exports = router;
