@@ -19,7 +19,7 @@ router.post("/getCartQuantity", (req, res) => {
 router.post("/addToCart", (req, res) => {
   Cart.updateOne(
     { userUid: req.body.userUid },
-    { $inc: { quantity: 1 }, $push: { items: req.body.item } }
+    { $inc: { quantity: 1 }, $push: { items: { item: req.body.item } } }
   )
     .exec()
     .then((cart) => {
@@ -34,7 +34,7 @@ router.post("/addToCart", (req, res) => {
 // API to fetch all items in the cart for a user
 router.post("/getCartItems", (req, res) => {
   Cart.findOne({ userUid: req.body.userId })
-    .populate("items")
+    .populate("items.item")
     .exec()
     .then((cartItems) => {
       res.status(200).json({ success: true, items: cartItems.items });
