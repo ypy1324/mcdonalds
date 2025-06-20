@@ -17,17 +17,29 @@ router.post("/getCartQuantity", (req, res) => {
 
 // API to add an item to the cart
 router.post("/addToCart", (req, res) => {
-  Cart.updateOne(
-    { userUid: req.body.userUid },
-    { $inc: { quantity: 1 }, $push: { items: { item: req.body.item } } }
-  )
+  Cart.findOne({ userUid: req.body.userUid })
     .exec()
     .then((cart) => {
-      res.status(200).json({ success: true });
-    })
-    .catch((err) => {
-      console.log(err);
-      res.status(400).json({ success: false });
+      cart.items.map((item) => {
+        if (item.item.toString() === req.body.item._id.toString()) {
+          item.itemQuantity += 1;
+          cart.quantity += 1;
+          cart.save();
+          return res.status(200).json({ success: true });
+        }
+      });
+      Cart.updateOne(
+        { userUid: req.body.userUid },
+        { $inc: { quantity: 1 }, $push: { items: { item: req.body.item } } }
+      )
+        .exec()
+        .then(() => {
+          res.status(200).json({ success: true });
+        })
+        .catch((err) => {
+          console.log(err);
+          res.status(400).json({ success: false });
+        });
     });
 });
 
