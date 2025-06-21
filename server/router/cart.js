@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { Cart } = require("../model/Cart");
 
-// API to fetch cart quantity for a user
+// API to fetch cart quantity
 router.post("/getCartQuantity", (req, res) => {
   Cart.findOne({ userUid: req.body.userId })
     .exec()
@@ -43,7 +43,7 @@ router.post("/addToCart", (req, res) => {
     });
 });
 
-// API to fetch all items in the cart for a user
+// API to fetch all items in the cart
 router.post("/getCartItems", (req, res) => {
   Cart.findOne({ userUid: req.body.userId })
     .populate("items.item")
