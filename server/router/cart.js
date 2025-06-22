@@ -17,6 +17,7 @@ router.post("/getCartQuantity", (req, res) => {
 
 // API to add an item to the cart
 router.post("/addToCart", (req, res) => {
+  let itemExists = false;
   Cart.findOne({ userUid: req.body.userUid })
     .exec()
     .then((cart) => {
@@ -25,21 +26,23 @@ router.post("/addToCart", (req, res) => {
           item.itemQuantity += 1;
           cart.quantity += 1;
           cart.save();
+          itemExists = true;
           return res.status(200).json({ success: true });
         }
       });
-      Cart.updateOne(
-        { userUid: req.body.userUid },
-        { $inc: { quantity: 1 }, $push: { items: { item: req.body.item } } }
-      )
-        .exec()
-        .then(() => {
-          res.status(200).json({ success: true });
-        })
-        .catch((err) => {
-          console.log(err);
-          res.status(400).json({ success: false });
+      if (!itemExists) {
+        cart.items.push({
+          item: req.body.item._id,
+          itemQuantity: 1,
         });
+        cart.quantity += 1;
+        cart.save();
+        return res.status(200).json({ success: true });
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json({ success: false });
     });
 });
 
