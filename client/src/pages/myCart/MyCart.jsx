@@ -17,7 +17,6 @@ function MyCart() {
         .then((res) => {
           if (res.data.success) {
             setCartItems([...res.data.items]);
-            console.log(res.data.items);
           } else {
             console.error("Failed to fetch cart quantity");
           }

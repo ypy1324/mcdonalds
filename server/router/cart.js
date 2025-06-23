@@ -60,4 +60,23 @@ router.post("/getCartItems", (req, res) => {
     });
 });
 
+router.post("/addQuantity", (req, res) => {
+  Cart.findOne({ userUid: req.body.userUid })
+    .exec()
+    .then((cart) => {
+      cart.items.map((item) => {
+        if (item._id.toString() === req.body.item._id.toString()) {
+          item.itemQuantity += 1;
+          cart.quantity += 1;
+          cart.save();
+          return res.status(200).json({ success: true });
+        }
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json({ success: false });
+    });
+});
+
 module.exports = router;
