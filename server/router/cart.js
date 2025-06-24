@@ -22,6 +22,7 @@ router.post("/addToCart", (req, res) => {
     .exec()
     .then((cart) => {
       cart.items.map((item) => {
+        console.log(item._id.toString(), req.body.item._id.toString());
         if (item.item.toString() === req.body.item._id.toString()) {
           item.itemQuantity += 1;
           cart.quantity += 1;
@@ -60,16 +61,29 @@ router.post("/getCartItems", (req, res) => {
     });
 });
 
-router.post("/addQuantity", (req, res) => {
+// API to adjust the quantity of an item in the cart
+router.post("/quantity", (req, res) => {
   Cart.findOne({ userUid: req.body.userUid })
     .exec()
     .then((cart) => {
       cart.items.map((item) => {
         if (item._id.toString() === req.body.item._id.toString()) {
-          item.itemQuantity += 1;
-          cart.quantity += 1;
-          cart.save();
-          return res.status(200).json({ success: true });
+          if (req.body.action === "increase") {
+            item.itemQuantity += 1;
+            cart.quantity += 1;
+            cart.save();
+            return res.status(200).json({ success: true });
+          } else {
+            item.itemQuantity -= 1;
+            cart.quantity -= 1;
+            if (item.itemQuantity === 0) {
+              cart.items = cart.items.filter(
+                (cartItem) => cartItem._id.toString() !== item._id.toString()
+              );
+            }
+            cart.save();
+            return res.status(200).json({ success: true });
+          }
         }
       });
     })

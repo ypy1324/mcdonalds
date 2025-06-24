@@ -7,18 +7,19 @@ import { useSelector } from "react-redux";
 function CartList(props) {
   const user = useSelector((state) => state.user);
 
-  const handleAddQuantity = (item) => {
+  const handleQuantity = (item, action) => {
     let body = {
       userUid: user.uid,
       item: item,
+      action: action,
     };
     axios
-      .post("/api/cart/addQuantity", body)
+      .post("/api/cart/quantity", body)
       .then((res) => {
         if (res.data.success) {
-          console.log("Item quantity added successfully");
+          console.log("Item quantity adjusted successfully");
         } else {
-          console.log("Failed to add item quantity");
+          console.log("Failed to adjust item quantity");
         }
       })
       .catch((err) => {
@@ -36,11 +37,14 @@ function CartList(props) {
             <div className="cart-item-details">
               <div className="cart-item-header">{item.item.name}</div>
               <div className="cart-item-quantity">
-                <CiCircleMinus className="quantity-symbol" />
+                <CiCircleMinus
+                  className="quantity-symbol"
+                  onClick={() => handleQuantity(item, "decrease")}
+                />
                 <div className="cart-item-quantity">{item.itemQuantity}</div>
                 <CiCirclePlus
                   className="quantity-symbol"
-                  onClick={() => handleAddQuantity(item)}
+                  onClick={() => handleQuantity(item, "increase")}
                 />
                 <div className="cart-item-total">${item.item.price}</div>
               </div>
