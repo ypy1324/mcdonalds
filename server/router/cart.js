@@ -22,7 +22,7 @@ router.post("/addToCart", (req, res) => {
     .exec()
     .then((cart) => {
       cart.items.map((item) => {
-        console.log(item._id.toString(), req.body.item._id.toString());
+        // console.log(item._id.toString(), req.body.item._id.toString());
         if (item.item.toString() === req.body.item._id.toString()) {
           item.itemQuantity += 1;
           cart.quantity += 1;
@@ -86,6 +86,19 @@ router.post("/quantity", (req, res) => {
           }
         }
       });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json({ success: false });
+    });
+});
+
+router.post("/getCart", (req, res) => {
+  Cart.findOne({ userUid: req.body.userId })
+    // .populate("items.item")
+    .exec()
+    .then((cartItems) => {
+      res.status(200).json({ success: true, items: cartItems });
     })
     .catch((err) => {
       console.log(err);

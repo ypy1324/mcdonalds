@@ -4,12 +4,15 @@ import { AiOutlineStar } from "react-icons/ai";
 import MealModal from "../../common/meal-modal/MealModal";
 import Card from "react-bootstrap/Card";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { cartInfo } from "../../reducer/cartSlice";
 import axios from "axios";
 
 function Menu() {
+  const dispatch = useDispatch();
   const params = useParams();
   const user = useSelector((state) => state.user);
+  const cart = useSelector((state) => state.cart);
 
   const [menuItems, setMenuItems] = useState([]);
   // const [showModal, setShowModal] = useState(false);
@@ -44,6 +47,16 @@ function Menu() {
       .then((res) => {
         if (res.data.success) {
           console.log("Item added to cart successfully");
+          axios.post("/api/cart/getCart", { userId: user.uid }).then((res) => {
+            if (res.data.success) {
+              let cartDetail = {
+                quantity: res.data.items.quantity,
+                items: res.data.items,
+              };
+              dispatch(cartInfo(cartDetail));
+              console.log("Cart updated:", cartDetail);
+            }
+          });
         } else {
           console.log("Failed to add item to cart");
         }

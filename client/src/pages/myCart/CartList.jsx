@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { CiCircleMinus } from "react-icons/ci";
 import { CiCirclePlus } from "react-icons/ci";
 import axios from "axios";
@@ -26,6 +26,8 @@ function CartList(props) {
         console.log(err);
       });
   };
+
+  useEffect(() => {}, [user]);
 
   return (
     <div>

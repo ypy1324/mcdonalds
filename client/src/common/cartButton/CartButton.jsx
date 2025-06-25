@@ -1,22 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { RiShoppingBasketLine } from "react-icons/ri";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { cartInfo } from "../../reducer/cartSlice";
 import "./CartButton.css";
 
 function CartButton() {
-  const [cartQuantity, setCartQuantity] = useState(0);
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  const cart = useSelector((state) => state.cart);
 
   useEffect(() => {
     if (user?.uid) {
       const body = { userId: user.uid };
       axios
-        .post("/api/cart/getCartQuantity", body)
+        .post("/api/cart/getCart", body)
         .then((res) => {
           if (res.data.success) {
-            setCartQuantity(res.data.quantity);
+            let cartDetail = {
+              quantity: res.data.items.quantity,
+              items: res.data.items,
+            };
+            dispatch(cartInfo(cartDetail));
           } else {
             console.error("Failed to fetch cart quantity");
           }
@@ -30,7 +36,7 @@ function CartButton() {
   return (
     <Link to="/mycart" className="cart-button">
       <RiShoppingBasketLine />
-      <div className="cart-qty">{cartQuantity}</div>
+      <div className="cart-qty">{cart.quantity}</div>
     </Link>
   );
 }
