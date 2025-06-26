@@ -106,4 +106,27 @@ router.post("/getCart", (req, res) => {
     });
 });
 
+// API to remove an item from the cart
+router.post("/removeItem", (req, res) => {
+  Cart.findOne({ userUid: req.body.userUid })
+    .exec()
+    .then((cart) => {
+      cart.items.map((item) => {
+        if (item._id.toString() === req.body.item._id.toString()) {
+          cart.quantity -= item.itemQuantity;
+          cart.items = cart.items.filter(
+            (cartItem) => cartItem._id.toString() !== item._id.toString()
+          );
+
+          cart.save();
+          return res.status(200).json({ success: true });
+        }
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json({ success: false });
+    });
+});
+
 module.exports = router;

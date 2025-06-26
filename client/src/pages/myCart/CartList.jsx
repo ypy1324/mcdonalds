@@ -27,7 +27,24 @@ function CartList(props) {
       });
   };
 
-  useEffect(() => {}, [user]);
+  const removeItemFromCart = (item) => {
+    let body = {
+      userUid: user.uid,
+      item: item,
+    };
+    axios
+      .post("/api/cart/removeItem", body)
+      .then((res) => {
+        if (res.data.success) {
+          console.log("Item removed from cart successfully");
+        } else {
+          console.log("Failed to remove item from cart");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div>
@@ -50,7 +67,12 @@ function CartList(props) {
                 />
                 <div className="cart-item-total">${item.item.price}</div>
               </div>
-              <button className="cart-item-remove-btn">Remove</button>
+              <button
+                className="cart-item-remove-btn"
+                onClick={() => removeItemFromCart(item)}
+              >
+                Remove
+              </button>
             </div>
           </div>
         );
