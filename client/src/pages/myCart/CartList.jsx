@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { CiCircleMinus } from "react-icons/ci";
 import { CiCirclePlus } from "react-icons/ci";
 import axios from "axios";
