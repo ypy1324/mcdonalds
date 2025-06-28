@@ -46,17 +46,13 @@ function Menu() {
       .post("/api/cart/addToCart", body)
       .then((res) => {
         if (res.data.success) {
-          console.log("Item added to cart successfully");
-          axios.post("/api/cart/getCart", { userId: user.uid }).then((res) => {
-            if (res.data.success) {
-              let cartDetail = {
-                quantity: res.data.items.quantity,
-                items: res.data.items,
-              };
-              dispatch(cartInfo(cartDetail));
-              console.log("Cart updated:", cartDetail);
-            }
-          });
+          console.log(res.data);
+          let cartDetail = {
+            quantity: res.data.items.quantity,
+            items: res.data.items,
+          };
+          dispatch(cartInfo(cartDetail));
+          console.log("Cart updated:", cartDetail);
         } else {
           console.log("Failed to add item to cart");
         }

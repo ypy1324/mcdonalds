@@ -13,10 +13,10 @@ function MyCart() {
     if (user?.uid) {
       const body = { userId: user.uid };
       axios
-        .post("/api/cart/getCartItems", body)
+        .post("/api/cart/getCart", body)
         .then((res) => {
           if (res.data.success) {
-            setCartItems([...res.data.items]);
+            setCartItems([...res.data.items.items]);
           } else {
             console.error("Failed to fetch cart quantity");
           }
