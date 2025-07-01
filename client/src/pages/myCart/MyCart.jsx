@@ -11,8 +11,8 @@ function MyCart() {
     <div className="mycart-wrapper">
       <div className="mycart-header">My Cart</div>
       <div className="mycart-content">
-        <CartList cartItems={cart.items.items} />
-        <CartCheckout cartItems={cart.items.items} />
+        <CartList cartItems={cart.cartItems} />
+        <CartCheckout cartItems={cart.cartItems} />
       </div>
     </div>
   );

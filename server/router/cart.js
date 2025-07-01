@@ -8,9 +8,9 @@ router.post("/addToCart", (req, res) => {
   Cart.findOne({ userUid: req.body.userUid })
     .exec()
     .then((cart) => {
-      cart.items.map((item) => {
-        if (item.item.toString() === req.body.item._id.toString()) {
-          item.itemQuantity += 1;
+      cart.cartItems.map((cartItem) => {
+        if (cartItem.item.toString() === req.body.item._id.toString()) {
+          cartItem.itemQuantity += 1;
           cart.quantity += 1;
           cart.save();
           itemExists = true;
@@ -18,7 +18,7 @@ router.post("/addToCart", (req, res) => {
         }
       });
       if (!itemExists) {
-        cart.items.push({
+        cart.cartItems.push({
           item: req.body.item._id,
           itemQuantity: 1,
         });
@@ -36,11 +36,10 @@ router.post("/addToCart", (req, res) => {
 // API to get the cart
 router.post("/getCart", (req, res) => {
   Cart.findOne({ userUid: req.body.userId })
-    .populate("items.item")
+    .populate("cartItems.item")
     .exec()
     .then((cartItems) => {
-      // console.log(cartItems);
-      res.status(200).json({ success: true, items: cartItems });
+      res.status(200).json({ success: true, cartItems: cartItems });
     })
     .catch((err) => {
       console.log(err);
@@ -53,7 +52,7 @@ router.post("/quantity", (req, res) => {
   Cart.findOne({ userUid: req.body.userUid })
     .exec()
     .then((cart) => {
-      cart.items.map((item) => {
+      cart.cartItems.map((item) => {
         if (item._id.toString() === req.body.item._id.toString()) {
           if (req.body.action === "increase") {
             item.itemQuantity += 1;
@@ -64,7 +63,7 @@ router.post("/quantity", (req, res) => {
             item.itemQuantity -= 1;
             cart.quantity -= 1;
             if (item.itemQuantity === 0) {
-              cart.items = cart.items.filter(
+              cart.cartItems = cart.cartItems.filter(
                 (cartItem) => cartItem._id.toString() !== item._id.toString()
               );
             }

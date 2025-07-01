@@ -5,7 +5,7 @@ import MealModal from "../../common/meal-modal/MealModal";
 import Card from "react-bootstrap/Card";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
-import { cartInfo } from "../../reducer/cartSlice";
+import { storeCartInfo } from "../../reducer/cartSlice";
 import axios from "axios";
 
 function Menu() {
@@ -50,7 +50,7 @@ function Menu() {
             quantity: res.data.items.quantity,
             items: res.data.items,
           };
-          dispatch(cartInfo(cartDetail));
+          dispatch(storeCartInfo(cartDetail));
           console.log("Item added to cart successfully");
         } else {
           console.log("Failed to add item to cart");

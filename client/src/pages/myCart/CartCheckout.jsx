@@ -10,9 +10,9 @@ function CartCheckout(props) {
   const tax = (subTotalPrice * 0.13).toFixed(2);
   const totalPrice = +subTotalPrice + +tax;
 
-  useEffect(() => {
-    console.log(props.cartItems);
-  }, [props]);
+  // useEffect(() => {
+  //   console.log(props.cartItems);
+  // }, [props]);
 
   return (
     <div className="cart-checkout-wrapper">

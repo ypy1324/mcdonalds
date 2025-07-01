@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { RiShoppingBasketLine } from "react-icons/ri";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { cartInfo } from "../../reducer/cartSlice";
+import { storeCartInfo } from "../../reducer/cartSlice";
 import "./CartButton.css";
 
 function CartButton() {
@@ -19,10 +19,10 @@ function CartButton() {
         .then((res) => {
           if (res.data.success) {
             let cartDetail = {
-              quantity: res.data.items.quantity,
-              items: res.data.items,
+              quantity: res.data.cartItems.quantity,
+              cartItems: res.data.cartItems.cartItems,
             };
-            dispatch(cartInfo(cartDetail));
+            dispatch(storeCartInfo(cartDetail));
           } else {
             console.error("Failed to fetch cart quantity");
           }
