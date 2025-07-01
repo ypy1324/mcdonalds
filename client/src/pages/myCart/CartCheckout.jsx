@@ -1,18 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 function CartCheckout(props) {
-  const totalItems = props.cartItems.length;
-  const subTotalPrice = props.cartItems.reduce(
-    (acc, item) => acc + item.price,
-    0
-  );
+  const totalItems = props.cart.quantity || 0;
+
+  let subTotalPrice = 0;
+  props.cart.cartItems.map((item) => {
+    subTotalPrice += item.item.price * item.itemQuantity;
+  });
+
   const tax = (subTotalPrice * 0.13).toFixed(2);
   const totalPrice = +subTotalPrice + +tax;
-
-  // useEffect(() => {
-  //   console.log(props.cartItems);
-  // }, [props]);
 
   return (
     <div className="cart-checkout-wrapper">

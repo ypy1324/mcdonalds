@@ -84,10 +84,10 @@ router.post("/removeItem", (req, res) => {
   Cart.findOne({ userUid: req.body.userUid })
     .exec()
     .then((cart) => {
-      cart.items.map((item) => {
+      cart.cartItems.map((item) => {
         if (item._id.toString() === req.body.item._id.toString()) {
           cart.quantity -= item.itemQuantity;
-          cart.items = cart.items.filter(
+          cart.cartItems = cart.cartItems.filter(
             (cartItem) => cartItem._id.toString() !== item._id.toString()
           );
 

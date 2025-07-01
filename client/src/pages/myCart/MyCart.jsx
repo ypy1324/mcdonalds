@@ -12,7 +12,7 @@ function MyCart() {
       <div className="mycart-header">My Cart</div>
       <div className="mycart-content">
         <CartList cartItems={cart.cartItems} />
-        <CartCheckout cartItems={cart.cartItems} />
+        <CartCheckout cart={cart} />
       </div>
     </div>
   );
