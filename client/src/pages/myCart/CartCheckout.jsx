@@ -8,9 +8,10 @@ function CartCheckout(props) {
   props.cart.cartItems.map((item) => {
     subTotalPrice += item.item.price * item.itemQuantity;
   });
+  subTotalPrice = subTotalPrice.toFixed(2);
 
   const tax = (subTotalPrice * 0.13).toFixed(2);
-  const totalPrice = +subTotalPrice + +tax;
+  const totalPrice = (+subTotalPrice + +tax).toFixed(2);
 
   return (
     <div className="cart-checkout-wrapper">
