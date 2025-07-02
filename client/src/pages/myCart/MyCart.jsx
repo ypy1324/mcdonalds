@@ -10,10 +10,14 @@ function MyCart() {
   return (
     <div className="mycart-wrapper">
       <div className="mycart-header">My Cart</div>
-      <div className="mycart-content">
-        <CartList cartItems={cart.cartItems} />
-        <CartCheckout cart={cart} />
-      </div>
+      {cart.quantity === 0 ? (
+        <div>Your cart is empty</div>
+      ) : (
+        <div className="mycart-content">
+          <CartList cartItems={cart.cartItems} />
+          <CartCheckout cart={cart} />
+        </div>
+      )}
     </div>
   );
 }

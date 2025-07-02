@@ -48,10 +48,11 @@ function Menu() {
         if (res.data.success) {
           let cartDetail = {
             quantity: res.data.items.quantity,
-            items: res.data.items,
+            items: res.data.items.cartItems,
           };
           dispatch(storeCartInfo(cartDetail));
           console.log("Item added to cart successfully");
+          console.log(cartDetail);
         } else {
           console.log("Failed to add item to cart");
         }
