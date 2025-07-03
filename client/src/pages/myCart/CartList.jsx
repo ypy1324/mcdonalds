@@ -48,7 +48,7 @@ function CartList(props) {
 
   useEffect(() => {
     console.log(props.cartItems);
-  }, [props.cartItems]);
+  }, []);
 
   return (
     <div>
