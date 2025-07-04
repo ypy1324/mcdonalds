@@ -31,7 +31,7 @@ function CartButton() {
           console.error(err);
         });
     }
-  }, [user]);
+  }, [user, cart]);
 
   return (
     <Link to="/mycart" className="cart-button">

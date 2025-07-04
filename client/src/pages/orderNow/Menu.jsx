@@ -46,11 +46,6 @@ function Menu() {
       .post("/api/cart/addToCart", body)
       .then((res) => {
         if (res.data.success) {
-          let cartDetail = {
-            quantity: res.data.items.quantity,
-            cartItems: res.data.items.cartItems,
-          };
-          dispatch(storeCartInfo(cartDetail));
           console.log("Item added to cart successfully");
         } else {
           console.log("Failed to add item to cart");
