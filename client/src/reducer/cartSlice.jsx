@@ -11,9 +11,6 @@ const cartSlice = createSlice({
       state.quantity = action.payload.quantity;
       state.cartItems = action.payload.cartItems;
     },
-    // clearUser: (state) => {
-    //   state.uid = "";
-    // },
   },
 });
 
