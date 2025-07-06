@@ -40,6 +40,11 @@
   white-space: nowrap;
 }
 
+.active-order-type {
+  transform: scale(1.1);
+  background-color: var(--color-lightyellow);
+}
+
 .order-type-option:hover {
   transform: scale(1.1);
   background-color: var(--color-lightyellow);
@@ -65,10 +70,12 @@
   margin-top: 1rem;
 }
 
-.delivery-address > div:nth-child(4) {
+.change-address-btn {
+  color: var(--color-black);
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-bold);
   cursor: pointer;
+  text-decoration: none;
 }
 
 /* PaymentDetails.jsx */

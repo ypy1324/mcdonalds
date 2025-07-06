@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -13,10 +13,6 @@ function OrderSummary() {
 
   const tax = (subTotalPrice * 0.13).toFixed(2);
   const totalPrice = (+subTotalPrice + +tax).toFixed(2);
-
-  useEffect(() => {
-    console.log(cart);
-  }, []);
 
   return (
     <div className="order-summary-wrapper">
