@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector } from "react-redux";
 
 function UseRewardsPoints() {
+  const user = useSelector((state) => state.user);
+  const [usePoints, setUsePoints] = useState(false);
+
   return (
     <div className="use-points-wrapper">
       <div className="use-points-header">Use your rewards points</div>
       <div className="use-points-subheader">Current rewards points:</div>
-      <div className="rewards-points">837 points</div>
+      <div className="rewards-points">{user.rewardPoints} points</div>
       <div className="checkbox-wrapper">
-        <input type="checkbox" />
+        <input type="checkbox" onClick={() => setUsePoints(!usePoints)} />
         <label>Apply</label>
       </div>
     </div>
