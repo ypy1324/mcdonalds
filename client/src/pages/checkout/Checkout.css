@@ -197,6 +197,11 @@
   margin-top: 4rem;
 }
 
+.add-rewards-points {
+  color: var(--color-red);
+  font-size: var(--font-size-smallest);
+}
+
 .place-order-wrapper {
   text-align: center;
   margin-top: 3rem;
