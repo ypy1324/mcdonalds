@@ -106,4 +106,20 @@ router.post("/removeItem", (req, res) => {
     });
 });
 
+// API to clear the cart
+router.post("/clearCart", (req, res) => {
+  Cart.updateOne(
+    { userUid: req.body.userUid },
+    { $set: { quantity: 0, cartItems: [] } }
+  )
+    .exec()
+    .then(() => {
+      res.status(200).json({ success: true });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json({ success: false });
+    });
+});
+
 module.exports = router;

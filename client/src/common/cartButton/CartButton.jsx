@@ -23,6 +23,7 @@ function CartButton() {
               cartItems: res.data.cartItems.cartItems,
             };
             dispatch(storeCartInfo(cartDetail));
+            console.log("sdfsdf");
           } else {
             console.error("Failed to fetch cart quantity");
           }
@@ -31,7 +32,7 @@ function CartButton() {
           console.error(err);
         });
     }
-  }, [user, cart]);
+  }, [user]);
 
   return (
     <Link to="/mycart" className="cart-button">
