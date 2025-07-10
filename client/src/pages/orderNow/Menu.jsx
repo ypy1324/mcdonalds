@@ -12,7 +12,6 @@ function Menu() {
   const dispatch = useDispatch();
   const params = useParams();
   const user = useSelector((state) => state.user);
-  const cart = useSelector((state) => state.cart);
 
   const [menuItems, setMenuItems] = useState([]);
   // const [showModal, setShowModal] = useState(false);
@@ -46,6 +45,15 @@ function Menu() {
       .post("/api/cart/addToCart", body)
       .then((res) => {
         if (res.data.success) {
+          axios.post("/api/cart/getCart", { userId: user.uid }).then((res) => {
+            if (res.data.success) {
+              let cartDetail = {
+                quantity: res.data.cartItems.quantity,
+                cartItems: res.data.cartItems.cartItems,
+              };
+              dispatch(storeCartInfo(cartDetail));
+            }
+          });
           console.log("Item added to cart successfully");
         } else {
           console.log("Failed to add item to cart");

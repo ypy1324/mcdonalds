@@ -2,9 +2,11 @@ import React from "react";
 import { CiCircleMinus } from "react-icons/ci";
 import { CiCirclePlus } from "react-icons/ci";
 import axios from "axios";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { storeCartInfo } from "../../reducer/cartSlice";
 
 function CartList(props) {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
 
   const handleQuantity = (item, action) => {
@@ -17,6 +19,15 @@ function CartList(props) {
       .post("/api/cart/quantity", body)
       .then((res) => {
         if (res.data.success) {
+          axios.post("/api/cart/getCart", { userId: user.uid }).then((res) => {
+            if (res.data.success) {
+              let cartDetail = {
+                quantity: res.data.cartItems.quantity,
+                cartItems: res.data.cartItems.cartItems,
+              };
+              dispatch(storeCartInfo(cartDetail));
+            }
+          });
           console.log("Item quantity adjusted successfully");
         } else {
           console.log("Failed to adjust item quantity");
@@ -36,6 +47,15 @@ function CartList(props) {
       .post("/api/cart/removeItem", body)
       .then((res) => {
         if (res.data.success) {
+          axios.post("/api/cart/getCart", { userId: user.uid }).then((res) => {
+            if (res.data.success) {
+              let cartDetail = {
+                quantity: res.data.cartItems.quantity,
+                cartItems: res.data.cartItems.cartItems,
+              };
+              dispatch(storeCartInfo(cartDetail));
+            }
+          });
           console.log("Item removed from cart successfully");
         } else {
           console.log("Failed to remove item from cart");

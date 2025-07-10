@@ -66,8 +66,7 @@ router.post("/quantity", (req, res) => {
             cart.quantity -= 1;
             if (cartItem.itemQuantity === 0) {
               cart.cartItems = cart.cartItems.filter(
-                (cartItem) =>
-                  cartItem._id.toString() !== cartItem._id.toString()
+                (item) => item._id.toString() !== req.body.item._id.toString()
               );
             }
             cart.save();

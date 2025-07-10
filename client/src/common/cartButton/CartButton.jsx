@@ -10,6 +10,7 @@ function CartButton() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const cart = useSelector((state) => state.cart);
+  const cartUpdated = useSelector((state) => state.cart.updatedAt);
 
   useEffect(() => {
     if (user?.uid) {
@@ -23,7 +24,7 @@ function CartButton() {
               cartItems: res.data.cartItems.cartItems,
             };
             dispatch(storeCartInfo(cartDetail));
-            console.log("sdfsdf");
+            // console.log(cart);
           } else {
             console.error("Failed to fetch cart quantity");
           }
