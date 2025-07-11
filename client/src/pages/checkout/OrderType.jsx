@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { CiDeliveryTruck } from "react-icons/ci";
 import { FaHamburger } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function OrderType() {
+  const user = useSelector((state) => state.user);
   const [orderType, setOrderType] = useState("delivery");
 
   return (
@@ -38,7 +40,10 @@ function OrderType() {
       {orderType === "delivery" && (
         <div className="delivery-address">
           <div>Delivering to</div>
-          <div>2221 Yonge St</div>
+          <div>
+            {user.address.street}, {user.address.city},{" "}
+            {user.address.postalCode}
+          </div>
           <div>Not the right address?</div>
           <NavLink className="change-address-btn" to={"/profile/changeAddress"}>
             Change
