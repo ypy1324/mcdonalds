@@ -113,9 +113,15 @@
   margin: 1rem 0 1rem 0;
 }
 
+.rewards-points-info {
+  display: flex;
+  align-items: center;
+}
+
 .rewards-points {
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-xbold);
+  margin-right: 1.5rem;
 }
 
 .checkbox-wrapper {

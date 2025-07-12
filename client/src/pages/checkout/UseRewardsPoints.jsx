@@ -1,5 +1,8 @@
-import React, { use, useState } from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import { FaRegQuestionCircle } from "react-icons/fa";
+import OverlayTrigger from "react-bootstrap/OverlayTrigger";
+import Tooltip from "react-bootstrap/Tooltip";
 
 function UseRewardsPoints(props) {
   const user = useSelector((state) => state.user);
@@ -14,9 +17,26 @@ function UseRewardsPoints(props) {
     <div className="use-points-wrapper">
       <div className="use-points-header">Use your rewards points</div>
       <div className="use-points-subheader">Current rewards points:</div>
-      <div className="rewards-points">{user.rewardPoints} points</div>
+      <div className="rewards-points-info">
+        <div className="rewards-points">{user.rewardPoints} points</div>
+        <OverlayTrigger
+          placement="right"
+          overlay={
+            <Tooltip id="button-tooltip">
+              Use your rewards points for discounts, available when you have
+              more than 1 point.
+            </Tooltip>
+          }
+        >
+          <FaRegQuestionCircle size="1.5rem" />
+        </OverlayTrigger>
+      </div>
       <div className="checkbox-wrapper">
-        <input type="checkbox" onClick={() => handleUsePoints()} />
+        <input
+          type="checkbox"
+          disabled={user.rewardPoints === 0}
+          onClick={() => handleUsePoints()}
+        />
         <label>Apply</label>
       </div>
     </div>
