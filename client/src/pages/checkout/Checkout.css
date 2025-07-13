@@ -272,6 +272,11 @@
   font-weight: var(--font-weight-xbold);
 }
 
+.checkout-rewards-points {
+  color: var(--color-red);
+  margin-top: 4rem;
+}
+
 @media screen and (max-width: 991px) {
   .checkout-content {
     display: block;

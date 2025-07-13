@@ -5,26 +5,42 @@ import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { clearCartInfo } from "../../reducer/cartSlice";
 import axios from "axios";
+import { useLocation } from "react-router-dom";
+import UseRewardsPoints from "./UseRewardsPoints";
 
-function CheckoutSuccess() {
+function CheckoutSuccess(props) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
 
+  const { state } = useLocation();
+  const {
+    subTotalPrice,
+    usingRewardsPoints,
+    useRewardsPoints,
+    subTotalPriceWithPoints,
+    taxWithPoints,
+    totalPriceWithPoints,
+    tax,
+    totalPrice,
+  } = state || {};
+
   useEffect(() => {
-    let body = { userUid: user.uid };
-    axios
-      .post("/api/cart/clearCart", body)
-      .then((res) => {
-        if (res.data.success) {
-          dispatch(clearCartInfo());
-        } else {
-          console.log("Failed to clear cart");
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    return () => {
+      let body = { userUid: user.uid };
+      axios
+        .post("/api/cart/clearCart", body)
+        .then((res) => {
+          if (res.data.success) {
+            dispatch(clearCartInfo());
+          } else {
+            console.log("Failed to clear cart");
+          }
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
   }, []);
 
   return (
@@ -45,17 +61,49 @@ function CheckoutSuccess() {
           </div>
         );
       })}
-      <div className="checkout-order-details checkout-subtotal-price">
-        <div>Subtotal</div>
-        <div>$13.98</div>
-      </div>
-      <div className="checkout-order-details">
-        <div>Tax</div>
-        <div>$1.57</div>
-      </div>
-      <div className="checkout-order-details checkout-total-price">
-        <div>Total</div>
-        <div>$15.54</div>
+      <hr className="checkout-success-divider" />
+      {useRewardsPoints ? (
+        <div>
+          <div className="checkout-order-details checkout-subtotal-price">
+            <div>Subtotal</div>
+            <div>${subTotalPrice}</div>
+          </div>
+          <div className="checkout-order-details">
+            <div></div>
+            <div>-${usingRewardsPoints}</div>
+          </div>
+          <div className="checkout-order-details">
+            <div>Using Rewards Points</div>
+            <div>${subTotalPriceWithPoints}</div>
+          </div>
+          <div className="checkout-order-details">
+            <div>Tax</div>
+            <div>${taxWithPoints}</div>
+          </div>
+          <div className="checkout-order-details checkout-total-price">
+            <div>Total</div>
+            <div>${totalPriceWithPoints}</div>
+          </div>
+        </div>
+      ) : (
+        <div>
+          <div className="checkout-order-details checkout-subtotal-price">
+            <div>Subtotal</div>
+            <div>${subTotalPrice}</div>
+          </div>
+          <div className="checkout-order-details">
+            <div>Tax</div>
+            <div>${tax}</div>
+          </div>
+          <div className="checkout-order-details checkout-total-price">
+            <div>Total</div>
+            <div>${totalPrice}</div>
+          </div>
+        </div>
+      )}
+      <div className="checkout-order-details checkout-rewards-points">
+        <div>My Rewards Points</div>
+        <div>{user.rewardPoints} Points</div>
       </div>
       <hr className="checkout-success-divider" />
       <Link to="/">

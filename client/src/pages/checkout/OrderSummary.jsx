@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -23,6 +23,34 @@ function OrderSummary(props) {
   ).toFixed(2);
   const totalPrice = (+subTotalPrice + +tax).toFixed(2);
   const addRewardsPoints = Math.floor(subTotalPrice * 10);
+
+  const dataToPass = props.useRewardsPoints
+    ? {
+        subTotalPrice: subTotalPrice,
+        usingRewardsPoints: usingRewardsPoints,
+        useRewardsPoints: props.useRewardsPoints,
+        subTotalPriceWithPoints: subTotalPriceWithPoints,
+        taxWithPoints: taxWithPoints,
+        totalPriceWithPoints: totalPriceWithPoints,
+      }
+    : {
+        useRewardsPoints: props.useRewardsPoints,
+        subTotalPrice: subTotalPrice,
+        tax: tax,
+        totalPrice: totalPrice,
+      };
+
+  // const dataToPass = {
+  //   subTotalPrice: subTotalPrice,
+  //   usingRewardsPoints: usingRewardsPoints,
+  //   useRewardsPoints: props.useRewardsPoints,
+  //   subTotalPriceWithPoints: subTotalPriceWithPoints,
+  //   taxWithPoints: taxWithPoints,
+  //   totalPriceWithPoints: totalPriceWithPoints,
+  //   addRewardsPoints: addRewardsPoints,
+  //   tax: tax,
+  //   totalPrice: totalPrice,
+  // };
 
   return (
     <div className="order-summary-wrapper">
@@ -84,7 +112,7 @@ function OrderSummary(props) {
         <div>+{addRewardsPoints} points</div>
       </div>
       <div className="place-order-wrapper">
-        <Link to="/checkout/success">
+        <Link to="/checkout/success" state={dataToPass}>
           <button className="place-order-btn">Place Order</button>
         </Link>
       </div>
