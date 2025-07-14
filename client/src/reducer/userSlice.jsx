@@ -19,6 +19,13 @@ const userSlice = createSlice({
       state.address = action.payload.address;
       // state.accessToken = action.payload.accessToken;
     },
+    updateUser: (state, action) => {
+      state.displayName = action.payload.displayName || state.displayName;
+      state.email = action.payload.email || state.email;
+      state.rewardPoints = action.payload.rewardPoints || state.rewardPoints;
+      state.address = action.payload.address || state.address;
+      // state.accessToken = action.payload.accessToken || state.accessToken;
+    },
     clearUser: (state) => {
       state.uid = "";
       state.displayName = "";
@@ -30,5 +37,5 @@ const userSlice = createSlice({
   },
 });
 
-export const { loginUser, clearUser } = userSlice.actions;
+export const { loginUser, updateUser, clearUser } = userSlice.actions;
 export default userSlice.reducer;

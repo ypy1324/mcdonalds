@@ -6,9 +6,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { clearCartInfo } from "../../reducer/cartSlice";
 import axios from "axios";
 import { useLocation } from "react-router-dom";
-import UseRewardsPoints from "./UseRewardsPoints";
 
-function CheckoutSuccess(props) {
+function CheckoutSuccess() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);

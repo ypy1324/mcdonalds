@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { updateUser } from "../../reducer/userSlice";
+import axios from "axios";
 
 function OrderSummary(props) {
+  const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
 
@@ -40,17 +43,28 @@ function OrderSummary(props) {
         totalPrice: totalPrice,
       };
 
-  // const dataToPass = {
-  //   subTotalPrice: subTotalPrice,
-  //   usingRewardsPoints: usingRewardsPoints,
-  //   useRewardsPoints: props.useRewardsPoints,
-  //   subTotalPriceWithPoints: subTotalPriceWithPoints,
-  //   taxWithPoints: taxWithPoints,
-  //   totalPriceWithPoints: totalPriceWithPoints,
-  //   addRewardsPoints: addRewardsPoints,
-  //   tax: tax,
-  //   totalPrice: totalPrice,
-  // };
+  const rewardsPointsHandler = () => {
+    let body = {
+      userUid: user.uid,
+      // usePoints: props.useRewardsPoints ? user.rewardPoints : 0,
+      addPoints: addRewardsPoints,
+    };
+    axios
+      .post("/api/cart/addRewardsPoints", body)
+      .then((res) => {
+        if (res.data.success) {
+          dispatch(
+            updateUser({ rewardPoints: user.rewardPoints + addRewardsPoints })
+          );
+          console.log("Rewards points updated successfully");
+        } else {
+          console.log("Failed to update rewards points");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="order-summary-wrapper">
@@ -113,7 +127,12 @@ function OrderSummary(props) {
       </div>
       <div className="place-order-wrapper">
         <Link to="/checkout/success" state={dataToPass}>
-          <button className="place-order-btn">Place Order</button>
+          <button
+            className="place-order-btn"
+            onClick={() => rewardsPointsHandler()}
+          >
+            Place Order
+          </button>
         </Link>
       </div>
     </div>

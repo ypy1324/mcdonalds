@@ -24,7 +24,6 @@ function CartButton() {
               cartItems: res.data.cartItems.cartItems,
             };
             dispatch(storeCartInfo(cartDetail));
-            // console.log(cart);
           } else {
             console.error("Failed to fetch cart quantity");
           }

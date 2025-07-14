@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Cart } = require("../model/Cart");
+const { User } = require("../model/User");
 
 // API to add an item to the cart
 router.post("/addToCart", (req, res) => {
@@ -113,6 +114,23 @@ router.post("/clearCart", (req, res) => {
   )
     .exec()
     .then(() => {
+      res.status(200).json({ success: true });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(400).json({ success: false });
+    });
+});
+
+// API to add rewards points based on the cart total
+router.post("/addRewardsPoints", (req, res) => {
+  User.findOneAndUpdate(
+    { uid: req.body.userUid },
+    // { $dec: { rewardPoints: req.body.usePoints } },
+    { $inc: { rewardPoints: req.body.addPoints } }
+  )
+    .exec()
+    .then((user) => {
       res.status(200).json({ success: true });
     })
     .catch((err) => {
