@@ -15,7 +15,7 @@ function CheckoutSuccess() {
   const { state } = useLocation();
   const {
     subTotalPrice,
-    usingRewardsPoints,
+    rewardsPointsPrice,
     useRewardsPoints,
     subTotalPriceWithPoints,
     taxWithPoints,
@@ -69,7 +69,7 @@ function CheckoutSuccess() {
           </div>
           <div className="checkout-order-details">
             <div></div>
-            <div>-${usingRewardsPoints}</div>
+            <div>-${rewardsPointsPrice}</div>
           </div>
           <div className="checkout-order-details">
             <div>Using Rewards Points</div>

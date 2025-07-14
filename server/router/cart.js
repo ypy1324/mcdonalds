@@ -124,13 +124,13 @@ router.post("/clearCart", (req, res) => {
 
 // API to add rewards points based on the cart total
 router.post("/addRewardsPoints", (req, res) => {
-  User.findOneAndUpdate(
+  const netPoints = req.body.addPoints - req.body.usePoints;
+  User.updateOne(
     { uid: req.body.userUid },
-    // { $dec: { rewardPoints: req.body.usePoints } },
-    { $inc: { rewardPoints: req.body.addPoints } }
+    { $inc: { rewardPoints: netPoints } }
   )
     .exec()
-    .then((user) => {
+    .then(() => {
       res.status(200).json({ success: true });
     })
     .catch((err) => {

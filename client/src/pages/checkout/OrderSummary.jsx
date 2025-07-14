@@ -15,10 +15,9 @@ function OrderSummary(props) {
   });
   subTotalPrice = subTotalPrice.toFixed(2);
 
-  const usingRewardsPoints = (user.rewardPoints / 100).toFixed(2);
-  const subTotalPriceWithPoints = (subTotalPrice - usingRewardsPoints).toFixed(
-    2
-  );
+  const rewardsPoints = props.rewardsPoints;
+  const rewardsPointsPrice = (rewardsPoints / 100).toFixed(2);
+  const subTotalPriceWithPoints = (subTotalPrice - rewardsPointsPrice).toFixed(2);
   const taxWithPoints = (subTotalPriceWithPoints * 0.13).toFixed(2);
   const tax = (subTotalPrice * 0.13).toFixed(2);
   const totalPriceWithPoints = (
@@ -30,7 +29,7 @@ function OrderSummary(props) {
   const dataToPass = props.useRewardsPoints
     ? {
         subTotalPrice: subTotalPrice,
-        usingRewardsPoints: usingRewardsPoints,
+        rewardsPointsPrice: rewardsPointsPrice,
         useRewardsPoints: props.useRewardsPoints,
         subTotalPriceWithPoints: subTotalPriceWithPoints,
         taxWithPoints: taxWithPoints,
@@ -46,7 +45,7 @@ function OrderSummary(props) {
   const rewardsPointsHandler = () => {
     let body = {
       userUid: user.uid,
-      // usePoints: props.useRewardsPoints ? user.rewardPoints : 0,
+      usePoints: props.useRewardsPoints ? rewardsPoints : 0,
       addPoints: addRewardsPoints,
     };
     axios
@@ -54,7 +53,10 @@ function OrderSummary(props) {
       .then((res) => {
         if (res.data.success) {
           dispatch(
-            updateUser({ rewardPoints: user.rewardPoints + addRewardsPoints })
+            updateUser({
+              rewardPoints:
+                user.rewardPoints + addRewardsPoints - rewardsPoints,
+            })
           );
           console.log("Rewards points updated successfully");
         } else {
@@ -89,7 +91,7 @@ function OrderSummary(props) {
           </div>
           <div className="summary-price">
             <div></div>
-            <div>-${usingRewardsPoints}</div>
+            <div>-${rewardsPointsPrice}</div>
           </div>
           <div className="summary-price">
             <div>Using Rewards Points</div>

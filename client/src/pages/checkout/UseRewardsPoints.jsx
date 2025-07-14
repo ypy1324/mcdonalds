@@ -5,12 +5,25 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import Tooltip from "react-bootstrap/Tooltip";
 
 function UseRewardsPoints(props) {
+  const cart = useSelector((state) => state.cart);
   const user = useSelector((state) => state.user);
+
   const [usePoints, setUsePoints] = useState(false);
+
+  let subTotalPrice = 0;
+  cart.cartItems.map((item) => {
+    subTotalPrice += item.item.price * item.itemQuantity;
+  });
+  subTotalPrice = subTotalPrice.toFixed(2);
 
   const handleUsePoints = () => {
     props.setUseRewardsPoints(!usePoints);
     setUsePoints(!usePoints);
+    if (subTotalPrice < user.rewardPoints / 100) {
+      props.setRewardsPoints(subTotalPrice * 100);
+    } else {
+      props.setRewardsPoints(user.rewardPoints);
+    }
   };
 
   return (

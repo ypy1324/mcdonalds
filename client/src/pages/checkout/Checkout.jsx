@@ -7,6 +7,7 @@ import "./Checkout.css";
 
 function Checkout() {
   const [useRewardsPoints, setUseRewardsPoints] = useState(false);
+  const [rewardsPoints, setRewardsPoints] = useState(0);
 
   return (
     <div>
@@ -18,9 +19,14 @@ function Checkout() {
           <UseRewardsPoints
             useRewardsPoints={useRewardsPoints}
             setUseRewardsPoints={setUseRewardsPoints}
+            rewardsPoints={rewardsPoints}
+            setRewardsPoints={setRewardsPoints}
           />
         </div>
-        <OrderSummary useRewardsPoints={useRewardsPoints} />
+        <OrderSummary
+          useRewardsPoints={useRewardsPoints}
+          rewardsPoints={rewardsPoints}
+        />
       </div>
     </div>
   );
