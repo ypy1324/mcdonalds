@@ -23,7 +23,7 @@ function Profile() {
         <hr className="profile-divider" />
         <div className="profile-field">
           <div className="profile-key">Rewards Points</div>
-          <div className="profile-value">{user.rewardPoints} pts</div>
+          <div className="profile-value">{user.rewardPoints} Points</div>
         </div>
         <hr className="profile-divider" />
         <div className="profile-field">
