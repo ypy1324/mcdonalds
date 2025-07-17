@@ -52,17 +52,20 @@ function Header() {
                   Hello, Mark!
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="dropdown-menu">
-                  <Dropdown.Item>
-                    <NavLink to="/profile" className="dropdown-items">
-                      <FaRegUser size="1.5rem" />
-                      <a className="dropdown-text">Profile</a>
-                    </NavLink>
+                  <Dropdown.Item
+                    as={Link}
+                    to="/profile"
+                    className="dropdown-items"
+                  >
+                    <FaRegUser size="1.5rem" />
+                    <div className="dropdown-text">Profile</div>
                   </Dropdown.Item>
-                  <Dropdown.Item onClick={() => logoutHandler()}>
-                    <NavLink className="dropdown-items">
-                      <MdLogout size="1.5rem" />
-                      <a className="dropdown-text">Logout</a>
-                    </NavLink>
+                  <Dropdown.Item
+                    onClick={() => logoutHandler()}
+                    className="dropdown-items"
+                  >
+                    <MdLogout size="1.5rem" />
+                    <div className="dropdown-text">Logout</div>
                   </Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
