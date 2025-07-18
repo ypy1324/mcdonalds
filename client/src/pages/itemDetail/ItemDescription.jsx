@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import mainBurger from "../../assets/images/mainBurger.png";
 import axios from "axios";
 
 function ItemDescription() {
