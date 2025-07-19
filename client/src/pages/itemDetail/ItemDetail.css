@@ -12,9 +12,8 @@
   margin-bottom: 3rem;
   display: flex;
   align-items: center;
-  /* width: 90vw;
-  min-width: fit-content;
-  max-width: 60rem; */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .item-description-wrapper > div:first-child {
@@ -28,6 +27,12 @@
 .item-detail-name {
   font-size: var(--font-size-xlarge);
   font-weight: var(--font-weight-xbold);
+
+  /* max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  word-wrap: break-word; */
 }
 
 .item-detail-price {
@@ -43,6 +48,12 @@
 .item-detail-description {
   margin-bottom: 2rem;
   width: 30rem;
+
+  /* max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 1rem;
+  word-wrap: break-word; */
 }
 
 .add-to-cart-btn {
