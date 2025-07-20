@@ -70,7 +70,10 @@ function Menu() {
       {menuItems.map((item, i) => {
         return (
           <div key={i} className="menu-item">
-            <Link to={`/ordernow/${params.category}/${item.name}`}>
+            <Link
+              to={`/ordernow/${params.category}/${item.name}`}
+              state={{ item }}
+            >
               <img className="menu-item-image" src={item.image} />
             </Link>
             <div className="menu-item-name">{item.name}</div>
