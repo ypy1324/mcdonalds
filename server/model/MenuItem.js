@@ -4,10 +4,9 @@ const menuItemSchema = new mongoose.Schema({
   name: String,
   image: String,
   price: Number,
-  rating: Number,
-  ratingCount: Number,
   description: String,
   category: String,
+  reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "Review" }],
 });
 
 const MenuItem = mongoose.model("MenuItem", menuItemSchema);

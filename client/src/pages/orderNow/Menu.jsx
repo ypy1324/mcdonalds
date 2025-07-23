@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import { AiOutlineStar } from "react-icons/ai";
 import MealModal from "../../common/meal-modal/MealModal";
 import Card from "react-bootstrap/Card";
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
@@ -78,10 +77,6 @@ function Menu() {
             </Link>
             <div className="menu-item-name">{item.name}</div>
             <div className="menu-item-price">${item.price}</div>
-            <div className="menu-item-rating">
-              <AiOutlineStar />
-              {item.rating} ({item.ratingCount})
-            </div>
             {user.uid && (
               <button
                 className="menu-item-select"

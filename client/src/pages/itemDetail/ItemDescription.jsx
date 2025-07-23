@@ -11,7 +11,7 @@ function ItemDescription(props) {
   const [itemDetail, setItemDetail] = useState({});
 
   useEffect(() => {
-    let body = { itemName: params.itemDetail };
+    let body = { itemId: props.item._id };
     axios
       .post("/api/menu/item/detail", body)
       .then((res) => {

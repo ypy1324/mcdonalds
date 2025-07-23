@@ -1,9 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { GoHeart } from "react-icons/go";
 import { useSelector } from "react-redux";
+import axios from "axios";
 
 function ReviewArea() {
   const user = useSelector((state) => state.user);
+  const [reviewContent, setReviewContent] = useState("");
+
+  useEffect(() => {}, []);
+
+  const handleSubmitReview = (content) => {
+    let body = {
+      userUid: user.uid,
+      content: content,
+    };
+    axios
+      .post("/api/review/addReview", body)
+      .then((res) => {
+        if (res.data.success) {
+          console.log("Review added successfully");
+          setReviewContent("");
+        } else {
+          console.log("Failed to add review");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <div className="review-area-wrapper">
@@ -13,13 +37,19 @@ function ReviewArea() {
       </div>
       {user.uid ? (
         <div className="review-input">
-          <textarea placeholder="Add a review..." />
+          <textarea
+            placeholder="Add a review..."
+            value={reviewContent}
+            onChange={(e) => setReviewContent(e.currentTarget.value)}
+          />
           <div>
-            <button>Submit</button>
+            <button onClick={() => handleSubmitReview(reviewContent)}>
+              Submit
+            </button>
           </div>
         </div>
       ) : null}
-      <div className="review-info">
+      {/* <div className="review-info">
         <div className="reviewer-info">
           <div>Mark</div>
           <div>1h ago</div>
@@ -29,18 +59,7 @@ function ReviewArea() {
           <GoHeart />
           <div>8</div>
         </div>
-      </div>
-      <div className="review-info">
-        <div className="reviewer-info">
-          <div>Mark</div>
-          <div>1h ago</div>
-        </div>
-        <div className="review-text">It was good good good good.</div>
-        <div className="review-likes">
-          <GoHeart />
-          <div>8</div>
-        </div>
-      </div>
+      </div> */}
     </div>
   );
 }

@@ -17,7 +17,7 @@ router.post("/item", (req, res) => {
 
 // API to get details of a specific menu item by name
 router.post("/item/detail", (req, res) => {
-  MenuItem.findOne({ name: req.body.itemName })
+  MenuItem.findOne({ _id: req.body.itemId })
     .exec()
     .then((doc) => {
       res.status(200).json({ success: true, item: doc });
