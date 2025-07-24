@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const reviewSchema = require("./Review");
 
 const menuItemSchema = new mongoose.Schema({
   name: String,
@@ -6,7 +7,7 @@ const menuItemSchema = new mongoose.Schema({
   price: Number,
   description: String,
   category: String,
-  reviews: [{ type: mongoose.Schema.Types.ObjectId, ref: "Review" }],
+  reviews: [reviewSchema],
 });
 
 const MenuItem = mongoose.model("MenuItem", menuItemSchema);

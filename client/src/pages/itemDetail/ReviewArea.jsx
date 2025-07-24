@@ -3,14 +3,17 @@ import { GoHeart } from "react-icons/go";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
-function ReviewArea() {
+function ReviewArea(props) {
   const user = useSelector((state) => state.user);
   const [reviewContent, setReviewContent] = useState("");
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    // console.log(props.item);
+  }, []);
 
   const handleSubmitReview = (content) => {
     let body = {
+      itemId: props.item._id,
       userUid: user.uid,
       content: content,
     };

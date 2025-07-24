@@ -11,7 +11,7 @@ function ItemDetail() {
   return (
     <div className="item-detail-wrapper">
       <ItemDescription item={item} />
-      <ReviewArea />
+      <ReviewArea item={item} />
     </div>
   );
 }
