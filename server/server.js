@@ -15,7 +15,7 @@ app.use("/api/review", require("./router/review.js"));
 
 app.listen(port, () => {
   mongoose
-    .connect(config.mongoURI)
+    .connect(config.mongoURI, { dbName: "mcdonalds" })
     .then(() => {
       console.log(`Example app listening on port ${port}...`);
       console.log("MongoDB connected successfully...");
