@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const reviewSchema = new mongoose.Schema(
   {
-    userUid: String,
+    uid: String,
     content: String,
     timeline: { type: Date, default: Date.now },
     likes: { type: Number, default: 0 },

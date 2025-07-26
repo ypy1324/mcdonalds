@@ -28,14 +28,14 @@ function ItemDescription(props) {
 
   const handleAddToCart = (item) => {
     let body = {
-      userUid: user.uid,
+      uid: user.uid,
       item: item,
     };
     axios
       .post("/api/cart/addToCart", body)
       .then((res) => {
         if (res.data.success) {
-          axios.post("/api/cart/getCart", { userId: user.uid }).then((res) => {
+          axios.post("/api/cart/getCart", { uid: user.uid }).then((res) => {
             if (res.data.success) {
               let cartDetail = {
                 quantity: res.data.cartItems.quantity,

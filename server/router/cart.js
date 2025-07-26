@@ -6,7 +6,7 @@ const { User } = require("../model/User");
 // API to add an item to the cart
 router.post("/addToCart", (req, res) => {
   let itemExists = false;
-  Cart.findOne({ userUid: req.body.userUid })
+  Cart.findOne({ uid: req.body.uid })
     .populate("cartItems.item")
     .exec()
     .then((cart) => {
@@ -37,7 +37,7 @@ router.post("/addToCart", (req, res) => {
 
 // API to get the cart
 router.post("/getCart", (req, res) => {
-  Cart.findOne({ userUid: req.body.userId })
+  Cart.findOne({ uid: req.body.uid })
     .populate("cartItems.item")
     .exec()
     .then((cartItems) => {
@@ -51,7 +51,7 @@ router.post("/getCart", (req, res) => {
 
 // API to adjust the quantity of an item in the cart
 router.post("/quantity", (req, res) => {
-  Cart.findOne({ userUid: req.body.userUid })
+  Cart.findOne({ uid: req.body.uid })
     .populate("cartItems.item")
     .exec()
     .then((cart) => {
@@ -84,7 +84,7 @@ router.post("/quantity", (req, res) => {
 
 // API to remove an item from the cart
 router.post("/removeItem", (req, res) => {
-  Cart.findOne({ userUid: req.body.userUid })
+  Cart.findOne({ uid: req.body.uid })
     .populate("cartItems.item")
     .exec()
     .then((cart) => {
@@ -109,7 +109,7 @@ router.post("/removeItem", (req, res) => {
 // API to clear the cart
 router.post("/clearCart", (req, res) => {
   Cart.updateOne(
-    { userUid: req.body.userUid },
+    { uid: req.body.uid },
     { $set: { quantity: 0, cartItems: [] } }
   )
     .exec()
@@ -126,7 +126,7 @@ router.post("/clearCart", (req, res) => {
 router.post("/addRewardsPoints", (req, res) => {
   const netPoints = req.body.addPoints - req.body.usePoints;
   User.updateOne(
-    { uid: req.body.userUid },
+    { _id: req.body.uid },
     { $inc: { rewardPoints: netPoints } }
   )
     .exec()

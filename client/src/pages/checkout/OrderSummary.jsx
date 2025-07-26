@@ -44,7 +44,7 @@ function OrderSummary(props) {
 
   const rewardsPointsHandler = () => {
     let body = {
-      userUid: user.uid,
+      uid: user.uid,
       usePoints: props.useRewardsPoints ? rewardsPoints : 0,
       addPoints: addRewardsPoints,
     };

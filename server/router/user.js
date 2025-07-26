@@ -9,7 +9,7 @@ router.post("/register", (req, res) => {
   user
     .save()
     .then(() => {
-      const cart = new Cart({ userUid: user.uid });
+      const cart = new Cart({ uid: user._id });
       cart.save().then(() => {
         res.status(200).json({ success: true });
       });

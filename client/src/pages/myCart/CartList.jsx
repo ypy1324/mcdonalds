@@ -11,7 +11,7 @@ function CartList(props) {
 
   const handleQuantity = (item, action) => {
     let body = {
-      userUid: user.uid,
+      uid: user.uid,
       item: item,
       action: action,
     };
@@ -19,7 +19,7 @@ function CartList(props) {
       .post("/api/cart/quantity", body)
       .then((res) => {
         if (res.data.success) {
-          axios.post("/api/cart/getCart", { userId: user.uid }).then((res) => {
+          axios.post("/api/cart/getCart", { uid: user.uid }).then((res) => {
             if (res.data.success) {
               let cartDetail = {
                 quantity: res.data.cartItems.quantity,
@@ -40,14 +40,14 @@ function CartList(props) {
 
   const removeItemFromCart = (item) => {
     let body = {
-      userUid: user.uid,
+      uid: user.uid,
       item: item,
     };
     axios
       .post("/api/cart/removeItem", body)
       .then((res) => {
         if (res.data.success) {
-          axios.post("/api/cart/getCart", { userId: user.uid }).then((res) => {
+          axios.post("/api/cart/getCart", { uid: user.uid }).then((res) => {
             if (res.data.success) {
               let cartDetail = {
                 quantity: res.data.cartItems.quantity,

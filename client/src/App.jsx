@@ -20,7 +20,16 @@ function App() {
           .post("/api/user/getUserByUid", body)
           .then((res) => {
             if (res.data.success) {
-              dispatch(loginUser(res.data.user));
+              const userData = res.data.user;
+              dispatch(
+                loginUser({
+                  uid: userData._id,
+                  displayName: userData.displayName,
+                  email: userData.email,
+                  rewardPoints: userData.rewardPoints,
+                  address: userData.address,
+                })
+              );
             } else {
               console.log("Failed to fetch user data");
             }

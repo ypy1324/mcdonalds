@@ -14,7 +14,7 @@ function CartButton() {
 
   useEffect(() => {
     if (user?.uid) {
-      const body = { userId: user.uid };
+      const body = { uid: user.uid };
       axios
         .post("/api/cart/getCart", body)
         .then((res) => {

@@ -26,7 +26,7 @@ function CheckoutSuccess() {
 
   useEffect(() => {
     return () => {
-      let body = { userUid: user.uid };
+      let body = { uid: user.uid };
       axios
         .post("/api/cart/clearCart", body)
         .then((res) => {

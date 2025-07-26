@@ -14,7 +14,7 @@ function ReviewArea(props) {
   const handleSubmitReview = (content) => {
     let body = {
       itemId: props.item._id,
-      userUid: user.uid,
+      uid: user.uid,
       content: content,
     };
     axios
