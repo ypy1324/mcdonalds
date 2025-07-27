@@ -44,7 +44,7 @@ function Register() {
     });
 
     let body = {
-      uid: createdUser.user.multiFactor.user.uid,
+      firebaseUid: createdUser.user.multiFactor.user.uid,
       displayName: createdUser.user.multiFactor.user.displayName,
       email: createdUser.user.multiFactor.user.email,
       address: {

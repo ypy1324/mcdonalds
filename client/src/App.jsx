@@ -15,7 +15,7 @@ function App() {
   useEffect(() => {
     firebase.auth().onAuthStateChanged((userInfo) => {
       if (userInfo !== null) {
-        let body = { uid: userInfo.uid };
+        let body = { firebaseUid: userInfo.uid };
         axios
           .post("/api/user/getUserByUid", body)
           .then((res) => {

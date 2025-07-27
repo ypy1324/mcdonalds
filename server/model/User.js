@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const cartSchema = require("./Cart");
 
 const userSchema = new mongoose.Schema({
-  uid: String,
+  firebaseUid: String,
   displayName: String,
   email: String,
   rewardPoints: { type: Number, default: 0 },

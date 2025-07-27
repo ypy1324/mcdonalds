@@ -22,7 +22,7 @@ router.post("/register", (req, res) => {
 
 // API to get user details by UID
 router.post("/getUserByUid", (req, res) => {
-  User.findOne({ uid: req.body.uid })
+  User.findOne({ firebaseUid: req.body.firebaseUid })
     .exec()
     .then((user) => {
       res.status(200).json({ success: true, user });
