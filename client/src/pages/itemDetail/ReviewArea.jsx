@@ -36,7 +36,7 @@ function ReviewArea(props) {
     <div className="review-area-wrapper">
       <div className="review-area-header">
         <div>Reviews</div>
-        <div>2</div>
+        <div>{props.item.reviews.length}</div>
       </div>
       {user.uid ? (
         <div className="review-input">
@@ -52,17 +52,21 @@ function ReviewArea(props) {
           </div>
         </div>
       ) : null}
-      {/* <div className="review-info">
-        <div className="reviewer-info">
-          <div>Mark</div>
-          <div>1h ago</div>
-        </div>
-        <div className="review-text">It was good good good good.</div>
-        <div className="review-likes">
-          <GoHeart />
-          <div>8</div>
-        </div>
-      </div> */}
+      {props.item.reviews.map((review, i) => {
+        return (
+          <div className="review-info">
+            <div className="reviewer-info">
+              <div>Mark</div>
+              <div>1h ago</div>
+            </div>
+            <div className="review-text">It was good good good good.</div>
+            <div className="review-likes">
+              <GoHeart />
+              <div>8</div>
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
