@@ -54,9 +54,9 @@ function ReviewArea(props) {
       ) : null}
       {props.item.reviews.map((review, i) => {
         return (
-          <div className="review-info">
+          <div className="review-info" key={i}>
             <div className="reviewer-info">
-              <div>Mark</div>
+              <div>{review.uid}</div>
               <div>1h ago</div>
             </div>
             <div className="review-text">It was good good good good.</div>
