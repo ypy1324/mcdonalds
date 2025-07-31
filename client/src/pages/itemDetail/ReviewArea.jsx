@@ -57,7 +57,7 @@ function ReviewArea(props) {
           <div className="review-info" key={i}>
             <div className="reviewer-info">
               <div>{review.uid}</div>
-              <div>1h ago</div>
+              <div>{review.timeline}</div>
             </div>
             <div className="review-text">{review.content}</div>
             <div className="review-likes">
