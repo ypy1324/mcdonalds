@@ -62,7 +62,7 @@ function ReviewArea(props) {
             <div className="review-text">{review.content}</div>
             <div className="review-likes">
               <GoHeart />
-              <div>8</div>
+              <div>{review.likes}</div>
             </div>
           </div>
         );
