@@ -81,7 +81,7 @@
   font-weight: var(--font-weight-semibold);
   border: 2px solid var(--color-black);
   border-radius: 20px;
-  padding: 0.2rem;
+  padding: 0.1rem;
   width: 3rem;
   background-color: var(--color-lightyellow);
 }
