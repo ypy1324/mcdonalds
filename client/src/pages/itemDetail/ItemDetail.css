@@ -139,6 +139,7 @@
 .review-likes {
   display: flex;
   align-items: center;
+  margin-top: 1rem;
 }
 
 .review-likes div {
