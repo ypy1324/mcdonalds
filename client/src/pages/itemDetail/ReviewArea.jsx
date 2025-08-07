@@ -8,7 +8,7 @@ function ReviewArea(props) {
   const [reviewContent, setReviewContent] = useState("");
 
   useEffect(() => {
-    // console.log(props.item);
+    console.log(props.item);
   }, []);
 
   const handleSubmitReview = (content) => {
