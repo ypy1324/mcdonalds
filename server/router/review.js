@@ -32,4 +32,24 @@ router.post("/addReview", async (req, res) => {
   }
 });
 
+// API to get reviews for a menu item
+router.post("/getReviews", async (req, res) => {
+  const { itemId } = req.body;
+  if (!itemId) {
+    return res.status(400).json({ success: false, message: "Missing item ID" });
+  }
+  try {
+    const item = await MenuItem.findById(itemId).populate("reviews");
+    if (!item) {
+      return res
+        .status(404)
+        .json({ success: false, message: "Menu item not found" });
+    }
+    res.status(200).json({ success: true, reviews: item.reviews });
+  } catch (err) {
+    console.error("Failed to get reviews:", err);
+    res.status(500).json({ success: false, message: "Server error" });
+  }
+});
+
 module.exports = router;
