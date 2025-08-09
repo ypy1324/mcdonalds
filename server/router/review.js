@@ -34,12 +34,11 @@ router.post("/addReview", async (req, res) => {
 
 // API to get reviews for a menu item
 router.post("/getReviews", async (req, res) => {
-  const { itemId } = req.body;
-  if (!itemId) {
+  if (!req.body.itemId) {
     return res.status(400).json({ success: false, message: "Missing item ID" });
   }
   try {
-    const item = await MenuItem.findById(itemId).populate("reviews");
+    const item = await MenuItem.findById(req.body.itemId).populate("reviews");
     if (!item) {
       return res
         .status(404)
