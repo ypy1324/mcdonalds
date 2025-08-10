@@ -35,7 +35,7 @@ router.post("/addReview", async (req, res) => {
 // API to get reviews for a menu item
 router.post("/getReviews", async (req, res) => {
   if (!req.body.itemId) {
-    return res.status(400).json({ success: false, message: "Missing item ID" });
+    return res.status(400).json({ success: false });
   }
   try {
     const item = await MenuItem.findById(req.body.itemId).populate("reviews");
@@ -47,7 +47,7 @@ router.post("/getReviews", async (req, res) => {
     res.status(200).json({ success: true, reviews: item.reviews });
   } catch (err) {
     console.error("Failed to get reviews:", err);
-    res.status(500).json({ success: false, message: "Server error" });
+    res.status(500).json({ success: false });
   }
 });
 
