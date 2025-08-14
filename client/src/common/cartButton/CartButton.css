@@ -19,7 +19,7 @@
 }
 
 .cart-qty {
-  /* position: absolute; */
+  position: absolute;
   top: -0.5rem;
   right: -0.5rem;
   border: 3px solid var(--color-black);
