@@ -98,12 +98,6 @@
   margin: 0.5rem 0 0.5rem 0;
 }
 
-.menu-item-rating {
-  font-size: var(--font-size-small);
-  font-weight: var(--font-weight-medium);
-  margin: 0.5rem 0 0.5rem 0;
-}
-
 .menu-item-select {
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-semibold);
