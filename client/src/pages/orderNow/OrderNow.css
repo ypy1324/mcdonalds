@@ -89,7 +89,7 @@
 .menu-item-name {
   font-size: var(--font-size-medium);
   font-weight: var(--font-weight-bold);
-  margin: 0.5rem 0 0.5rem 0;
+  margin: 1rem 0 0.5rem 0;
 }
 
 .menu-item-price {
