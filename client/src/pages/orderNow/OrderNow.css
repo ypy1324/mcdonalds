@@ -95,7 +95,7 @@
 .menu-item-price {
   font-size: var(--font-size-small);
   font-weight: var(--font-weight-medium);
-  margin: 0.5rem 0 1rem 0;
+  margin: 1rem 0 1rem 0;
 }
 
 .menu-item-select {
