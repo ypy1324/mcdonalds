@@ -35,6 +35,7 @@
 
 .profile-value {
   font-weight: var(--font-weight-medium);
+  margin-top: 1rem;
 }
 
 .profile-divider {
