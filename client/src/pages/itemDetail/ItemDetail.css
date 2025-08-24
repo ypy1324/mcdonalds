@@ -124,7 +124,7 @@
 .reviewer-info > div:first-child {
   font-weight: var(--font-weight-bold);
   font-size: var(--font-size-medium);
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 .reviewer-info > div:nth-child(2) {
